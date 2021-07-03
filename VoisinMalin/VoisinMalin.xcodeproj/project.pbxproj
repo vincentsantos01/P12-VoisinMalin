@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
-		BFB4879126906E2300C1272C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* ViewController.swift */; };
+		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
 		BFB4879426906E2300C1272C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879226906E2300C1272C /* Main.storyboard */; };
 		BFB4879726906E2300C1272C /* VoisinMalin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */; };
 		BFB4879926906E2500C1272C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879826906E2500C1272C /* Assets.xcassets */; };
 		BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */; };
 		BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487A626906E2500C1272C /* VoisinMalinTests.swift */; };
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
+		BFB487C326907BB200C1272C /* AddSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C226907BB200C1272C /* AddSearchController.swift */; };
+		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFB4879026906E2300C1272C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFB4879026906E2300C1272C /* SearchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListController.swift; sourceTree = "<group>"; };
 		BFB4879326906E2300C1272C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFB4879626906E2300C1272C /* VoisinMalin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoisinMalin.xcdatamodel; sourceTree = "<group>"; };
 		BFB4879826906E2500C1272C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		BFB487AD26906E2500C1272C /* VoisinMalinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoisinMalinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoisinMalinUITests.swift; sourceTree = "<group>"; };
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB487C226907BB200C1272C /* AddSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSearchController.swift; sourceTree = "<group>"; };
+		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +110,7 @@
 				BFB487BF26906EED00C1272C /* Model */,
 				BFB4878C26906E2300C1272C /* AppDelegate.swift */,
 				BFB4878E26906E2300C1272C /* SceneDelegate.swift */,
-				BFB4879026906E2300C1272C /* ViewController.swift */,
-				BFB4879226906E2300C1272C /* Main.storyboard */,
 				BFB4879826906E2500C1272C /* Assets.xcassets */,
-				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
 				BFB4879D26906E2500C1272C /* Info.plist */,
 				BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */,
 			);
@@ -144,6 +145,8 @@
 		BFB487C026906EF400C1272C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
+				BFB4879226906E2300C1272C /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,6 +154,9 @@
 		BFB487C126906EFD00C1272C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFB487C226907BB200C1272C /* AddSearchController.swift */,
+				BFB4879026906E2300C1272C /* SearchListController.swift */,
+				BFB487C426907C6D00C1272C /* FavoritListController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFB4879126906E2300C1272C /* ViewController.swift in Sources */,
+				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
+				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4879726906E2300C1272C /* VoisinMalin.xcdatamodeld in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
+				BFB487C326907BB200C1272C /* AddSearchController.swift in Sources */,
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
