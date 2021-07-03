@@ -121,21 +121,89 @@
             </objects>
             <point key="canvasLocation" x="1473.913043478261" y="-315.40178571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Search Controller-->
         <scene sceneID="Z9B-cE-ppg">
             <objects>
-                <viewController id="WTf-9T-Qtt" sceneMemberID="viewController">
+                <viewController id="WTf-9T-Qtt" customClass="AddSearchController" customModule="VoisinMalin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b60-18-Xba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre de la recherche" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTc-RA-GPi">
+                                <rect key="frame" x="47" y="115" width="327" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type de materiel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-XT-mrr">
+                                <rect key="frame" x="47" y="164" width="327" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo du materiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srx-Qp-axQ">
+                                <rect key="frame" x="47" y="286" width="135" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-ac-rKu">
+                                <rect key="frame" x="47" y="315" width="115" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U0E-kl-KdG">
+                                <rect key="frame" x="104" y="376" width="212" height="188"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMc-pa-QDW">
+                                <rect key="frame" x="55" y="754" width="304" height="47"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dMc-pa-QDW" secondAttribute="height" multiplier="305:47" id="swG-Se-To6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Mettre en ligne">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lieu Recherché" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48v-rl-Cec">
+                                <rect key="frame" x="47" y="214" width="327" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description de la recherche..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AOx-lF-o4k">
+                                <rect key="frame" x="40" y="557.5" width="334" height="176.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AOx-lF-o4k" secondAttribute="height" multiplier="327:173" id="x7J-Fo-9sK"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9oF-Cc-5wU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="AOx-lF-o4k" firstAttribute="leading" secondItem="9oF-Cc-5wU" secondAttribute="leading" constant="40" id="B4j-kM-S4o"/>
+                            <constraint firstItem="9oF-Cc-5wU" firstAttribute="bottom" secondItem="dMc-pa-QDW" secondAttribute="bottom" constant="12" id="I7A-xs-6zT"/>
+                            <constraint firstItem="dMc-pa-QDW" firstAttribute="leading" secondItem="9oF-Cc-5wU" secondAttribute="leading" constant="55" id="RwX-RW-goN"/>
+                            <constraint firstItem="9oF-Cc-5wU" firstAttribute="trailing" secondItem="AOx-lF-o4k" secondAttribute="trailing" constant="40" id="fXl-Aa-50D"/>
+                            <constraint firstItem="dMc-pa-QDW" firstAttribute="top" secondItem="AOx-lF-o4k" secondAttribute="bottom" constant="20" id="iLJ-xz-sYt"/>
+                            <constraint firstItem="9oF-Cc-5wU" firstAttribute="trailing" secondItem="dMc-pa-QDW" secondAttribute="trailing" constant="55" id="s13-eG-E2S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R8y-lY-g9b"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDQ-50-Hc8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-1078"/>
+            <point key="canvasLocation" x="2569.5652173913045" y="-1078.125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZVX-gy-tTF">
@@ -190,6 +258,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s02-eC-wWw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -203,7 +272,11 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
