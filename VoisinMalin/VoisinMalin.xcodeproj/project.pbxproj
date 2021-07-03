@@ -101,6 +101,9 @@
 		BFB4878B26906E2300C1272C /* VoisinMalin */ = {
 			isa = PBXGroup;
 			children = (
+				BFB487C126906EFD00C1272C /* Controller */,
+				BFB487C026906EF400C1272C /* View */,
+				BFB487BF26906EED00C1272C /* Model */,
 				BFB4878C26906E2300C1272C /* AppDelegate.swift */,
 				BFB4878E26906E2300C1272C /* SceneDelegate.swift */,
 				BFB4879026906E2300C1272C /* ViewController.swift */,
@@ -129,6 +132,27 @@
 				BFB487B326906E2500C1272C /* Info.plist */,
 			);
 			path = VoisinMalinUITests;
+			sourceTree = "<group>";
+		};
+		BFB487BF26906EED00C1272C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFB487C026906EF400C1272C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFB487C126906EFD00C1272C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
