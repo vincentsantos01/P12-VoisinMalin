@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF73494E26A71E41005671FA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494D26A71E41005671FA /* Account.swift */; };
+		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
+		BF73495326A71FD4005671FA /* adsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495126A71FD4005671FA /* adsTableViewCell.swift */; };
+		BF73495426A71FD4005671FA /* adsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73495226A71FD4005671FA /* adsTableViewCell.xib */; };
+		BF73495626A811F4005671FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495526A811F4005671FA /* UIImage.swift */; };
+		BF73495826A878DE005671FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495726A878DE005671FA /* DetailViewController.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
@@ -16,7 +22,6 @@
 		BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */; };
 		BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487A626906E2500C1272C /* VoisinMalinTests.swift */; };
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
-		BFB487C326907BB200C1272C /* AddSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C226907BB200C1272C /* AddSearchController.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF30C76D269DD34D00E6658D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF73494D26A71E41005671FA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
+		BF73495126A71FD4005671FA /* adsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adsTableViewCell.swift; sourceTree = "<group>"; };
+		BF73495226A71FD4005671FA /* adsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = adsTableViewCell.xib; sourceTree = "<group>"; };
+		BF73495526A811F4005671FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		BF73495726A878DE005671FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +65,6 @@
 		BFB487AD26906E2500C1272C /* VoisinMalinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoisinMalinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoisinMalinUITests.swift; sourceTree = "<group>"; };
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFB487C226907BB200C1272C /* AddSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSearchController.swift; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,8 +122,9 @@
 				BFB4878C26906E2300C1272C /* AppDelegate.swift */,
 				BFB4878E26906E2300C1272C /* SceneDelegate.swift */,
 				BFB4879826906E2500C1272C /* Assets.xcassets */,
-				BFB4879D26906E2500C1272C /* Info.plist */,
 				BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */,
+				BF30C76D269DD34D00E6658D /* GoogleService-Info.plist */,
+				BFB4879D26906E2500C1272C /* Info.plist */,
 			);
 			path = VoisinMalin;
 			sourceTree = "<group>";
@@ -138,6 +150,9 @@
 		BFB487BF26906EED00C1272C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF73494D26A71E41005671FA /* Account.swift */,
+				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
+				BF73495526A811F4005671FA /* UIImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +162,8 @@
 			children = (
 				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
 				BFB4879226906E2300C1272C /* Main.storyboard */,
+				BF73495126A71FD4005671FA /* adsTableViewCell.swift */,
+				BF73495226A71FD4005671FA /* adsTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,9 +171,9 @@
 		BFB487C126906EFD00C1272C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BFB487C226907BB200C1272C /* AddSearchController.swift */,
 				BFB4879026906E2300C1272C /* SearchListController.swift */,
 				BFB487C426907C6D00C1272C /* FavoritListController.swift */,
+				BF73495726A878DE005671FA /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF73495426A71FD4005671FA /* adsTableViewCell.xib in Resources */,
 				BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */,
 				BFB4879926906E2500C1272C /* Assets.xcassets in Resources */,
 				BFB4879426906E2300C1272C /* Main.storyboard in Resources */,
@@ -295,8 +313,12 @@
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4879726906E2300C1272C /* VoisinMalin.xcdatamodeld in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
-				BFB487C326907BB200C1272C /* AddSearchController.swift in Sources */,
+				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
+				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
+				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
+				BF73494E26A71E41005671FA /* Account.swift in Sources */,
+				BF73495326A71FD4005671FA /* adsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
 				INFOPLIST_FILE = VoisinMalin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
 				INFOPLIST_FILE = VoisinMalin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
