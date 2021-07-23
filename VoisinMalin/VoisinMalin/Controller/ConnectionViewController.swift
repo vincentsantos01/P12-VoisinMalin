@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class ConnectionViewController: UIViewController {
     
@@ -14,7 +15,6 @@ class ConnectionViewController: UIViewController {
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var alreadyAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
 
@@ -32,9 +32,6 @@ class ConnectionViewController: UIViewController {
         loginButton.layer.cornerRadius = 30
         loginButton.layer.borderWidth = 3
         loginButton.layer.borderColor = UIColor.white.cgColor
-        alreadyAccountButton.layer.cornerRadius = 20
-        alreadyAccountButton.layer.borderWidth = 3
-        alreadyAccountButton.layer.borderColor = UIColor.white.cgColor
         signupButton.layer.cornerRadius = 30
         signupButton.layer.borderWidth = 3
         signupButton.layer.borderColor = UIColor.black.cgColor
@@ -54,6 +51,11 @@ class ConnectionViewController: UIViewController {
                     print(error.debugDescription)
                 } else {
                     print("Inscription de \(self.userNameTextField.text ?? "no name")")
+                    
+                    let ref = Database.database(url: "https://p12voisinmalin-default-rtdb.europe-west1.firebasedatabase.app").reference()
+                    let userid = Auth.auth().currentUser?.uid
+                    ref.child("users").child(userid!).setValue(["username": self.userNameTextField.text!])
+                    
                     self.performSegue(withIdentifier: "goHome", sender: self)
                 }
             }

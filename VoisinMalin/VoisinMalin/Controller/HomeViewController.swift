@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     
@@ -18,12 +19,34 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let user = Auth.auth().currentUser {
-            nameLabel.text = user.email
+        if Auth.auth().currentUser != nil {
+            let ref = Database.database(url:"https://p12voisinmalin-default-rtdb.europe-west1.firebasedatabase.app").reference()
+            let userid = Auth.auth().currentUser?.uid
+            ref.child("users").child(userid!).observeSingleEvent(of: .value) { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let username = value?["username"] as? String ?? "no username"
+                self.nameLabel.text = username
+            }
+            
+            
+            
         } else {
             fatalError("ERROR aucuns utilisateur")
         }
     }
+    
+    
+    @IBAction func decoButton(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        } catch {
+            print("deconnection impossible")
+        }
+            
+        
+    }
+    
 
 
 }
