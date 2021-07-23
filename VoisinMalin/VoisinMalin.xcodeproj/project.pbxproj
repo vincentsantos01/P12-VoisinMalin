@@ -3,21 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */; };
 		BF73494E26A71E41005671FA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494D26A71E41005671FA /* Account.swift */; };
 		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
-		BF73495326A71FD4005671FA /* adsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495126A71FD4005671FA /* adsTableViewCell.swift */; };
-		BF73495426A71FD4005671FA /* adsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF73495226A71FD4005671FA /* adsTableViewCell.xib */; };
 		BF73495626A811F4005671FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495526A811F4005671FA /* UIImage.swift */; };
 		BF73495826A878DE005671FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495726A878DE005671FA /* DetailViewController.swift */; };
+		BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495926A8817C005671FA /* AdsRepresentable.swift */; };
+		BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495D26A9CF60005671FA /* TableViewCell.swift */; };
+		BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF73495F26AAF70F005671FA /* GoogleService-Info.plist */; };
+		BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* ConnectionViewController.swift */; };
+		BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1A26AB30BC000552FD /* HomeViewController.swift */; };
+		BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1C26AB4407000552FD /* LoginViewController.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
 		BFB4879426906E2300C1272C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879226906E2300C1272C /* Main.storyboard */; };
-		BFB4879726906E2300C1272C /* VoisinMalin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */; };
 		BFB4879926906E2500C1272C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879826906E2500C1272C /* Assets.xcassets */; };
 		BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */; };
 		BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487A626906E2500C1272C /* VoisinMalinTests.swift */; };
@@ -43,19 +47,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BF30C76D269DD34D00E6658D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.release.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.release.xcconfig"; sourceTree = "<group>"; };
+		4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.debug.xcconfig"; sourceTree = "<group>"; };
 		BF73494D26A71E41005671FA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
-		BF73495126A71FD4005671FA /* adsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = adsTableViewCell.swift; sourceTree = "<group>"; };
-		BF73495226A71FD4005671FA /* adsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = adsTableViewCell.xib; sourceTree = "<group>"; };
 		BF73495526A811F4005671FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		BF73495726A878DE005671FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BF73495926A8817C005671FA /* AdsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsRepresentable.swift; sourceTree = "<group>"; };
+		BF73495D26A9CF60005671FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BF73495F26AAF70F005671FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF824D1826AB2053000552FD /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		BF824D1A26AB30BC000552FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BF824D1C26AB4407000552FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BFB4879026906E2300C1272C /* SearchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListController.swift; sourceTree = "<group>"; };
 		BFB4879326906E2300C1272C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BFB4879626906E2300C1272C /* VoisinMalin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoisinMalin.xcdatamodel; sourceTree = "<group>"; };
 		BFB4879826906E2500C1272C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB4879B26906E2500C1272C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB4879D26906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +74,7 @@
 		BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoisinMalinUITests.swift; sourceTree = "<group>"; };
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
+		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71FE5905EAE07503CF14067D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8554D6DE4BB246CC05809DB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */,
+				27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BFB4878026906E2300C1272C = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +127,8 @@
 				BFB487A526906E2500C1272C /* VoisinMalinTests */,
 				BFB487B026906E2500C1272C /* VoisinMalinUITests */,
 				BFB4878A26906E2300C1272C /* Products */,
+				8554D6DE4BB246CC05809DB1 /* Pods */,
+				71FE5905EAE07503CF14067D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,9 +151,8 @@
 				BFB4878C26906E2300C1272C /* AppDelegate.swift */,
 				BFB4878E26906E2300C1272C /* SceneDelegate.swift */,
 				BFB4879826906E2500C1272C /* Assets.xcassets */,
-				BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */,
-				BF30C76D269DD34D00E6658D /* GoogleService-Info.plist */,
 				BFB4879D26906E2500C1272C /* Info.plist */,
+				BF73495F26AAF70F005671FA /* GoogleService-Info.plist */,
 			);
 			path = VoisinMalin;
 			sourceTree = "<group>";
@@ -153,6 +181,7 @@
 				BF73494D26A71E41005671FA /* Account.swift */,
 				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
 				BF73495526A811F4005671FA /* UIImage.swift */,
+				BF73495926A8817C005671FA /* AdsRepresentable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,8 +191,7 @@
 			children = (
 				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
 				BFB4879226906E2300C1272C /* Main.storyboard */,
-				BF73495126A71FD4005671FA /* adsTableViewCell.swift */,
-				BF73495226A71FD4005671FA /* adsTableViewCell.xib */,
+				BF73495D26A9CF60005671FA /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +202,9 @@
 				BFB4879026906E2300C1272C /* SearchListController.swift */,
 				BFB487C426907C6D00C1272C /* FavoritListController.swift */,
 				BF73495726A878DE005671FA /* DetailViewController.swift */,
+				BF824D1826AB2053000552FD /* ConnectionViewController.swift */,
+				BF824D1A26AB30BC000552FD /* HomeViewController.swift */,
+				BF824D1C26AB4407000552FD /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB487B626906E2500C1272C /* Build configuration list for PBXNativeTarget "VoisinMalin" */;
 			buildPhases = (
+				D38F4B43461DB2DBE8AB5C04 /* [CP] Check Pods Manifest.lock */,
 				BFB4878526906E2300C1272C /* Sources */,
 				BFB4878626906E2300C1272C /* Frameworks */,
 				BFB4878726906E2300C1272C /* Resources */,
+				352EA8F5065AD5715CCF6458 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,8 +314,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF73495426A71FD4005671FA /* adsTableViewCell.xib in Resources */,
 				BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */,
+				BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */,
 				BFB4879926906E2500C1272C /* Assets.xcassets in Resources */,
 				BFB4879426906E2300C1272C /* Main.storyboard in Resources */,
 			);
@@ -304,21 +337,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		352EA8F5065AD5715CCF6458 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D38F4B43461DB2DBE8AB5C04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoisinMalin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFB4878526906E2300C1272C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */,
+				BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
-				BFB4879726906E2300C1272C /* VoisinMalin.xcdatamodeld in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
 				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
+				BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */,
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
 				BF73494E26A71E41005671FA /* Account.swift in Sources */,
-				BF73495326A71FD4005671FA /* adsTableViewCell.swift in Sources */,
+				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
+				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +569,7 @@
 		};
 		BFB487B726906E2500C1272C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -511,6 +590,7 @@
 		};
 		BFB487B826906E2500C1272C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -653,19 +733,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BFB4879526906E2300C1272C /* VoisinMalin.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BFB4879626906E2300C1272C /* VoisinMalin.xcdatamodel */,
-			);
-			currentVersion = BFB4879626906E2300C1272C /* VoisinMalin.xcdatamodel */;
-			path = VoisinMalin.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BFB4878126906E2300C1272C /* Project object */;
 }
