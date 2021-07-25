@@ -24,6 +24,10 @@ class ConnectionViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         styles()
         setupTextFieldManager()
+       // if Auth.auth().currentUser?.email != nil {
+           // print("connecté")
+           // performSegue(withIdentifier: "goHome", sender: self)
+       // }
 
 
     }
@@ -43,12 +47,19 @@ class ConnectionViewController: UIViewController {
     }
     
     @IBAction func signupPressButton(_ sender: UIButton) {
-        if userNameTextField.text != "" && mailTextField.text != "" && PasswordTextField.text != "" {
+
+        
+       if userNameTextField.text != "" && mailTextField.text != "" && PasswordTextField.text != "" {
+        let cleanedPassword = PasswordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Password.isPasswordValid(cleanedPassword!) == false {
+            return presentAlert(titre: "error", message: "Merci de retren un mot de plasse qui contien 8 caracteres, un caractere special et un chiffre.")
+        }
             
             
             Auth.auth().createUser(withEmail: mailTextField.text!, password: PasswordTextField.text!) { authResult, error in
                 if error != nil {
                     print(error.debugDescription)
+                    self.presentAlert(titre: "Mail invalide", message: "Veuillez entrer un mail de type exemple@monmail.com")
                 } else {
                     print("Inscription de \(self.userNameTextField.text ?? "no name")")
                     
@@ -56,7 +67,7 @@ class ConnectionViewController: UIViewController {
                     let userid = Auth.auth().currentUser?.uid
                     ref.child("users").child(userid!).setValue(["username": self.userNameTextField.text!])
                     
-                    self.performSegue(withIdentifier: "goHome", sender: self)
+                    self.performSegue(withIdentifier: "goLunch", sender: self)
                 }
             }
             

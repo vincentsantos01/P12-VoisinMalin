@@ -18,6 +18,10 @@
 		BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* ConnectionViewController.swift */; };
 		BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1A26AB30BC000552FD /* HomeViewController.swift */; };
 		BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1C26AB4407000552FD /* LoginViewController.swift */; };
+		BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1E26AD4E44000552FD /* PresentAlert.swift */; };
+		BF824D2126AD5681000552FD /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2026AD5681000552FD /* Password.swift */; };
+		BF824D2326AD6387000552FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2226AD6387000552FD /* Constants.swift */; };
+		BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2626ADA10B000552FD /* AdCreateViewController.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
@@ -59,6 +63,10 @@
 		BF824D1826AB2053000552FD /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 		BF824D1A26AB30BC000552FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF824D1C26AB4407000552FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF824D1E26AD4E44000552FD /* PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAlert.swift; sourceTree = "<group>"; };
+		BF824D2026AD5681000552FD /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		BF824D2226AD6387000552FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BF824D2626ADA10B000552FD /* AdCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCreateViewController.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +190,9 @@
 				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
 				BF73495526A811F4005671FA /* UIImage.swift */,
 				BF73495926A8817C005671FA /* AdsRepresentable.swift */,
+				BF824D1E26AD4E44000552FD /* PresentAlert.swift */,
+				BF824D2026AD5681000552FD /* Password.swift */,
+				BF824D2226AD6387000552FD /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				BF824D1826AB2053000552FD /* ConnectionViewController.swift */,
 				BF824D1A26AB30BC000552FD /* HomeViewController.swift */,
 				BF824D1C26AB4407000552FD /* LoginViewController.swift */,
+				BF824D2626ADA10B000552FD /* AdCreateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -387,13 +399,17 @@
 				BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */,
 				BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
+				BF824D2126AD5681000552FD /* Password.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
 				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
+				BF824D2326AD6387000552FD /* Constants.swift in Sources */,
 				BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */,
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
+				BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */,
+				BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */,
 				BF73494E26A71E41005671FA /* Account.swift in Sources */,
 				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
 				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,

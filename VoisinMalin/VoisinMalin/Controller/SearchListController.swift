@@ -25,6 +25,9 @@ class SearchListController: UIViewController {
         demoAdProject()
         adsTableView.reloadData()
         styles()
+        if tabBarController?.selectedIndex == 1 {
+            navigationController?.popToRootViewController(animated: true)
+        }
         
     }
     

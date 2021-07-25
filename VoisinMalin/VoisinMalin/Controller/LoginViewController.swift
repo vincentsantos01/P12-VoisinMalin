@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
@@ -36,11 +37,13 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginViewPressButton(_ sender: UIButton) {
+        
         Auth.auth().signIn(withEmail: loginMailTexfield.text!, password: loginPasswordTextfield.text!) { authResult, error in
             if error != nil {
                 print(error.debugDescription)
+                self.presentAlert(titre: "Erreur", message: "Mail ou mot de passe invalide")
             } else {
-                self.performSegue(withIdentifier: "goHomeConnected", sender: self)
+                self.performSegue(withIdentifier: "goLunch", sender: self)
             }
         }
     }
