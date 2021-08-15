@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */; };
+		BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E033F26BC071C00E50B94 /* TabBarController.swift */; };
+		BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034326BC25E500E50B94 /* Authentification.storyboard */; };
+		BF6E034626BC270700E50B94 /* HomeManage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034526BC270700E50B94 /* HomeManage.storyboard */; };
 		BF73494E26A71E41005671FA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494D26A71E41005671FA /* Account.swift */; };
 		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
 		BF73495626A811F4005671FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495526A811F4005671FA /* UIImage.swift */; };
@@ -15,13 +18,15 @@
 		BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495926A8817C005671FA /* AdsRepresentable.swift */; };
 		BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495D26A9CF60005671FA /* TableViewCell.swift */; };
 		BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF73495F26AAF70F005671FA /* GoogleService-Info.plist */; };
-		BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* ConnectionViewController.swift */; };
+		BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* AuthentificationViewController.swift */; };
 		BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1A26AB30BC000552FD /* HomeViewController.swift */; };
 		BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1C26AB4407000552FD /* LoginViewController.swift */; };
 		BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1E26AD4E44000552FD /* PresentAlert.swift */; };
 		BF824D2126AD5681000552FD /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2026AD5681000552FD /* Password.swift */; };
 		BF824D2326AD6387000552FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2226AD6387000552FD /* Constants.swift */; };
 		BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2626ADA10B000552FD /* AdCreateViewController.swift */; };
+		BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */; };
+		BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27726B3EBAD00BF0ABF /* User.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
@@ -53,6 +58,9 @@
 /* Begin PBXFileReference section */
 		27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.release.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.release.xcconfig"; sourceTree = "<group>"; };
 		4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.debug.xcconfig"; sourceTree = "<group>"; };
+		BF6E033F26BC071C00E50B94 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		BF6E034326BC25E500E50B94 /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
+		BF6E034526BC270700E50B94 /* HomeManage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeManage.storyboard; sourceTree = "<group>"; };
 		BF73494D26A71E41005671FA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
 		BF73495526A811F4005671FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -60,13 +68,15 @@
 		BF73495926A8817C005671FA /* AdsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsRepresentable.swift; sourceTree = "<group>"; };
 		BF73495D26A9CF60005671FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BF73495F26AAF70F005671FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		BF824D1826AB2053000552FD /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		BF824D1826AB2053000552FD /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		BF824D1A26AB30BC000552FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF824D1C26AB4407000552FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF824D1E26AD4E44000552FD /* PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAlert.swift; sourceTree = "<group>"; };
 		BF824D2026AD5681000552FD /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		BF824D2226AD6387000552FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF824D2626ADA10B000552FD /* AdCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCreateViewController.swift; sourceTree = "<group>"; };
+		BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		BFA8B27726B3EBAD00BF0ABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +138,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BFA8B27426B211C800BF0ABF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		BFB4878026906E2300C1272C = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +204,7 @@
 		BFB487BF26906EED00C1272C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFA8B27426B211C800BF0ABF /* Modules */,
 				BF73494D26A71E41005671FA /* Account.swift */,
 				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
 				BF73495526A811F4005671FA /* UIImage.swift */,
@@ -193,6 +212,7 @@
 				BF824D1E26AD4E44000552FD /* PresentAlert.swift */,
 				BF824D2026AD5681000552FD /* Password.swift */,
 				BF824D2226AD6387000552FD /* Constants.swift */,
+				BFA8B27726B3EBAD00BF0ABF /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,6 +223,8 @@
 				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
 				BFB4879226906E2300C1272C /* Main.storyboard */,
 				BF73495D26A9CF60005671FA /* TableViewCell.swift */,
+				BF6E034326BC25E500E50B94 /* Authentification.storyboard */,
+				BF6E034526BC270700E50B94 /* HomeManage.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -213,10 +235,11 @@
 				BFB4879026906E2300C1272C /* SearchListController.swift */,
 				BFB487C426907C6D00C1272C /* FavoritListController.swift */,
 				BF73495726A878DE005671FA /* DetailViewController.swift */,
-				BF824D1826AB2053000552FD /* ConnectionViewController.swift */,
+				BF824D1826AB2053000552FD /* AuthentificationViewController.swift */,
 				BF824D1A26AB30BC000552FD /* HomeViewController.swift */,
 				BF824D1C26AB4407000552FD /* LoginViewController.swift */,
 				BF824D2626ADA10B000552FD /* AdCreateViewController.swift */,
+				BF6E033F26BC071C00E50B94 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */,
+				BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */,
+				BF6E034626BC270700E50B94 /* HomeManage.storyboard in Resources */,
 				BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */,
 				BFB4879926906E2500C1272C /* Assets.xcassets in Resources */,
 				BFB4879426906E2300C1272C /* Main.storyboard in Resources */,
@@ -397,7 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */,
-				BF824D1926AB2053000552FD /* ConnectionViewController.swift in Sources */,
+				BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
 				BF824D2126AD5681000552FD /* Password.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
@@ -408,11 +433,14 @@
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
+				BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */,
+				BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */,
 				BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */,
 				BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */,
 				BF73494E26A71E41005671FA /* Account.swift in Sources */,
 				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
 				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,
+				BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -573,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -633,7 +661,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
 				INFOPLIST_FILE = VoisinMalinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,7 +683,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
 				INFOPLIST_FILE = VoisinMalinTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

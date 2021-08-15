@@ -6,17 +6,17 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
+
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginMailTexfield: UITextField!
     @IBOutlet weak var loginPasswordTextfield: UITextField!
     @IBOutlet weak var LoginViewButton: UIButton!
-    
-    
+    @IBOutlet weak var noAccountButton: UIButton!
 
+    private let authService: AuthService = AuthService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
@@ -38,20 +38,25 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginViewPressButton(_ sender: UIButton) {
         
-        Auth.auth().signIn(withEmail: loginMailTexfield.text!, password: loginPasswordTextfield.text!) { authResult, error in
-            if error != nil {
-                print(error.debugDescription)
-                self.presentAlert(titre: "Erreur", message: "Mail ou mot de passe invalide")
+        
+        guard let login = loginMailTexfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        guard let password = loginPasswordTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        authService.signIn(email: login, password: password) { isSuccess in
+            if isSuccess {
+                self.dismiss(animated: true)
             } else {
-                self.performSegue(withIdentifier: "goLunch", sender: self)
+                self.presentAlert(titre: "Erreur", message: "Mail ou mot de passe invalide")
             }
         }
+    }
+    
+    @IBAction private func unwindToSignInViewController(_ segue: UIStoryboardSegue) { dismiss(animated: false) }
     }
     
     
     
     
-}
+
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

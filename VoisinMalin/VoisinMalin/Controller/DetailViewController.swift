@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    
+    
     @IBOutlet weak var adDescriptionImage: UIImageView!
     @IBOutlet weak var descriptinTitleLabel: UILabel!
     @IBOutlet weak var descriptionPriceLabel: UILabel!

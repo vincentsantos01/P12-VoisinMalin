@@ -6,6 +6,7 @@
 //
 import Foundation
 import UIKit
+//import FirebaseAuth
 
 class SearchListController: UIViewController {
 
@@ -17,18 +18,34 @@ class SearchListController: UIViewController {
     //var recipeData: RecipeData?
     var defaultAdsessai: [DemoAds] = []
     var demo: DemoAds?
-    
+    //private var userManager = UserManager()
+    //private var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //adsTableView.register(UINib(nibName: "adsTableViewCell", bundle: nil), forCellReuseIdentifier: "AdsCell")
+       
         demoAdProject()
         adsTableView.reloadData()
         styles()
-        if tabBarController?.selectedIndex == 1 {
-            navigationController?.popToRootViewController(animated: true)
-        }
+       /*
+        if  UserManager.currentUserConnect == nil {
+            performSegue(withIdentifier: "noConnected", sender: self)
+            print("--------------------------------------------------")
+            print("***************** NON CONNECTE *******************")
+            
+            print(String(describing: UserManager.currentUserConnect))
+            print("--------------------------------------------------")
+        } else {
+            print("--------------------------------------------------")
+            print("***************** CONNECTION OK ******************")
+            print("***************** UTILISATEURS EN LIGNE : \(String(describing: UserManager.currentUserConnect))")
+            
+            print("--------------------------------------------------")
+        }*/
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
