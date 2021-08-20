@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class DetailViewController: UIViewController {
     
     
        
-    var demoAd: DemoAds?
+    var demoAd: DefaultAds?
     //var adsRepresentable: AdsRepresentable?
     
     override func viewDidLoad() {
@@ -49,4 +50,13 @@ class DetailViewController: UIViewController {
         adDescriptionImage.image = UIImage(named: ads.image)
         
     }
+    
+    @IBAction func favoriteButton(_ sender: UIBarButtonItem) {
+        let img = adDescriptionImage.image
+        let title = descriptinTitleLabel.text
+        let price = descriptionPriceLabel.text
+        let desciption = descriptionLabel.text
+    }
+    
+    
 }

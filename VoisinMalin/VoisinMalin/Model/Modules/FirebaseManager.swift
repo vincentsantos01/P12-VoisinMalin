@@ -11,6 +11,7 @@ import Firebase
 
 protocol AuthType {
     var currentUID: String? { get }
+    var userMail: String? { get }
     func signIn(email: String, password: String, callback: @escaping (Bool) -> Void)
     func signUp(userName: String, email: String, password: String, callback: @escaping (Bool) -> Void)
     func signOut(callback: @escaping (Bool) -> Void)
@@ -40,6 +41,10 @@ final class AuthFirestore: AuthType {
     var currentUID: String? {
         return Auth.auth().currentUser?.uid
     }
+    var userMail: String? {
+        return Auth.auth().currentUser?.email
+    }
+    let db = Firestore.firestore()
 
     func signIn(email: String, password: String, callback: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
@@ -87,6 +92,7 @@ final class AuthService {
 
     private let auth: AuthType
     var currentUID: String? { return auth.currentUID }
+    var userMail: String? { return auth.userMail }
 
     init(auth: AuthType = AuthFirestore()) {
         self.auth = auth
@@ -107,11 +113,14 @@ final class AuthService {
     func isUserConnected(callback: @escaping (Bool) -> Void) {
         auth.isUserConnected(callback: callback)
     }
+    
 }
 final class DatabaseManager {
 
 
     private let database: DatabaseType
+    private let databaseRef = Database.database(url: "https://p12voisinmalin-default-rtdb.europe-west1.firebasedatabase.app").reference().child("ads")
+    let db = Firestore.firestore()
 
 
     init(database: DatabaseType = FirestoreDatabase()) {

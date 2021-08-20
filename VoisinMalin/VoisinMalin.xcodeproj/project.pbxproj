@@ -10,7 +10,6 @@
 		B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */; };
 		BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E033F26BC071C00E50B94 /* TabBarController.swift */; };
 		BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034326BC25E500E50B94 /* Authentification.storyboard */; };
-		BF6E034626BC270700E50B94 /* HomeManage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034526BC270700E50B94 /* HomeManage.storyboard */; };
 		BF73494E26A71E41005671FA /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494D26A71E41005671FA /* Account.swift */; };
 		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
 		BF73495626A811F4005671FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495526A811F4005671FA /* UIImage.swift */; };
@@ -36,6 +35,7 @@
 		BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487A626906E2500C1272C /* VoisinMalinTests.swift */; };
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
+		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +60,6 @@
 		4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6E033F26BC071C00E50B94 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BF6E034326BC25E500E50B94 /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
-		BF6E034526BC270700E50B94 /* HomeManage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeManage.storyboard; sourceTree = "<group>"; };
 		BF73494D26A71E41005671FA /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
 		BF73495526A811F4005671FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -92,6 +91,7 @@
 		BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoisinMalinUITests.swift; sourceTree = "<group>"; };
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
+		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
 		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -224,7 +224,7 @@
 				BFB4879226906E2300C1272C /* Main.storyboard */,
 				BF73495D26A9CF60005671FA /* TableViewCell.swift */,
 				BF6E034326BC25E500E50B94 /* Authentification.storyboard */,
-				BF6E034526BC270700E50B94 /* HomeManage.storyboard */,
+				BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,7 +351,6 @@
 			files = (
 				BFB4879C26906E2500C1272C /* LaunchScreen.storyboard in Resources */,
 				BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */,
-				BF6E034626BC270700E50B94 /* HomeManage.storyboard in Resources */,
 				BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */,
 				BFB4879926906E2500C1272C /* Assets.xcassets in Resources */,
 				BFB4879426906E2300C1272C /* Main.storyboard in Resources */,
@@ -432,6 +431,7 @@
 				BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */,
 				BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */,
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
+				BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
 				BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */,
 				BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */,
