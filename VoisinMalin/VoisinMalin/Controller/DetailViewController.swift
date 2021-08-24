@@ -5,11 +5,12 @@
 //  Created by vincent on 21/07/2021.
 //
 
-import Foundation
+//import Foundation
 import UIKit
-import Firebase
+//import Firebase
+import MessageUI
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     
@@ -19,11 +20,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var mailButton: UIButton!
+    @IBOutlet weak var delButton: UIButton!
     
     
        
     var demoAd: DefaultAds?
-    //var adsRepresentable: AdsRepresentable?
+    var privateAds = [DefaultAds]()
+    private let authService: AuthService = AuthService()
+    //var fbm = DatabaseManager()
+    //var db = Firestore.firestore()
+    var database = DatabaseManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +53,67 @@ class DetailViewController: UIViewController {
         descriptinTitleLabel.text = ads.title
         descriptionLabel.text = ads.description
         descriptionPriceLabel.text = ads.price + " €"
-        adDescriptionImage.image = UIImage(named: ads.image)
+        let url = (URL(string: "\(ads.image)") ?? nil)!
+        adDescriptionImage.load(url: url)
+        UserDefaults.standard.set(authService.userMail, forKey: "userMail")
+        if ads.mail == UserDefaults.standard.string(forKey: "userMail") {
+            delButton.isHidden = false
+        } else {
+            delButton.isHidden = true
+        }
+    }
+    
+    
+    
+    func configureMailController() -> MFMailComposeViewController {
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["\(demoAd?.mail ?? "??")"])
+        mailComposeVC.setSubject("Annonce: \(demoAd?.title ?? "??")")
+        mailComposeVC.setMessageBody("", isHTML: false)
+        return mailComposeVC
+    }
+    
+    func showMailError() {
+        let sendMailAlert = UIAlertController(title: "Mail impossible", message: "Impossible d'envoyer un mail", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "ok", style: .default, handler: nil)
+        sendMailAlert.addAction(dismiss)
+        self.present(sendMailAlert, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func favoriteButton(_ sender: UIBarButtonItem) {
         
     }
     
-    @IBAction func favoriteButton(_ sender: UIBarButtonItem) {
-        let img = adDescriptionImage.image
-        let title = descriptinTitleLabel.text
-        let price = descriptionPriceLabel.text
-        let desciption = descriptionLabel.text
+    
+    @IBAction func callButton(_ sender: UIButton) {
+        let url:NSURL = URL(string: "TEL://\(demoAd?.phone ?? "??")")! as NSURL
+        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
+    
+    
+    
+    @IBAction func mailButton(_ sender: UIButton) {
+        let mailComposeViewController = configureMailController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            showMailError()
+        }
+    }
+    
+    @IBAction func delButtonPressed(_ sender: Any) {
+        
+        database.deleteDoc(document: authService.currentUID!)
+    }
+    
+    
     
     
 }

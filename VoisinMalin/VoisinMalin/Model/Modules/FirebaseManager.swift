@@ -8,6 +8,7 @@
 import Foundation
 
 import Firebase
+import FirebaseStorage
 
 protocol AuthType {
     var currentUID: String? { get }
@@ -27,7 +28,7 @@ final class FirestoreDatabase: DatabaseType {
     func getUserData(with uid: String, callback: @escaping (Result<[String: Any], Error>) -> Void) {
         Firestore.firestore().collection("users").whereField("uid", isEqualTo: uid).getDocuments { querySnapshot, error in
             guard let data = querySnapshot?.documents.first?.data() else {
-                callback(.failure(error!))
+               // callback(.failure(error!))
                 return
                 
             }
@@ -121,12 +122,24 @@ final class DatabaseManager {
     private let database: DatabaseType
     private let databaseRef = Database.database(url: "https://p12voisinmalin-default-rtdb.europe-west1.firebasedatabase.app").reference().child("ads")
     let db = Firestore.firestore()
+    let storage = Storage.storage().reference()
+    
 
 
     init(database: DatabaseType = FirestoreDatabase()) {
         self.database = database
     }
-
+    
+    func deleteDoc(document: String) {
+        db.collection("ads").document(document).delete() { err in
+            if let err = err {
+                print("error \(err)")
+            } else {
+                print("ok")
+            }
+        }
+    }
+    
     func getUserData(with uid: String, callback: @escaping (Result<[String: Any], Error>) -> Void) {
         database.getUserData(with: uid, callback: callback)
     }

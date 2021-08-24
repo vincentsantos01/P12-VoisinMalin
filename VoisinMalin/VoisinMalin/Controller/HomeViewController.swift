@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import Firebase
+//import FirebaseDatabase
+//import Firebase
 
 class HomeViewController: UIViewController {
     
@@ -15,19 +15,22 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var adPost: UIButton!
     @IBOutlet weak var persoTableView: UITableView!
     @IBOutlet weak var postedAdsLabel: UILabel!
+    @IBOutlet weak var noAdsLabel: UILabel!
     
     
     
     private let authService: AuthService = AuthService()
     private let databaseManager: DatabaseManager = DatabaseManager()
-    var databaseRef: DatabaseReference?
+    //var databaseRef: DatabaseReference?
     var essai: [adessai] = [adessai]()
     var privateAds = [DefaultAds]()
-    var db = Firestore.firestore()
-    var exDb: DatabaseManager?
+    //var db = Firestore.firestore()
+    var database = DatabaseManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(authService.userMail, forKey: "userMail")
         adPost.layer.cornerRadius = 20
         adPost.layer.borderWidth = 3
         adPost.layer.borderColor = UIColor.black.cgColor
@@ -35,11 +38,14 @@ class HomeViewController: UIViewController {
         bindUI()
         persoTableView.dataSource = self
         persoTableView.delegate = self
-        essai = [adessai]()
+       // essai = [adessai]()
+        uploadData()
         
+    }
+
+    private func uploadData() {
         privateAds = []
-        
-        db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+        database.db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
             if let e = error {
                 print("on dirait \(e)")
             } else {
@@ -57,7 +63,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
+    
+    
     private func bindUI() {
         guard let uid = authService.currentUID else { return }
         databaseManager.getUserData(with: uid) { [unowned self] result in
@@ -74,34 +81,56 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func decoPressButton(_ sender: UIBarButtonItem) {
-        
         authService.signOut { isSuccess in
             if !isSuccess {
                 self.presentAlert(titre: "Erreur", message: "Impossible de vous déconnecter")
             }
         }
-
     }
-    
-    
-    
 }
+
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return privateAds.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            //privateAds.remove(at: 0)
+            database.db.collection(K.FStore.collectionName).document().delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    //self.privateAds.remove(at: 0)
+                    print("Document successfully removed!")
+                    self.persoTableView.reloadData()
+                }
+            }
+            persoTableView.reloadData()
+        }
+    }
+    
+    //  trouver comment filtrer les annonce par mail
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let persoAd = privateAds[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "persoCell", for: indexPath) as! PersonnalTableViewCell
-        cell.persoTitle.text = persoAd.title
-        cell.persoPrice.text = persoAd.price + "€"
-        let url = (URL(string: "\(persoAd.image)") ?? nil)!
-        cell.persoImage.load(url: url)
+        
+        
+        if persoAd.mail == UserDefaults.standard.string(forKey: "userMail") {
+            cell.persoTitle.text = persoAd.title
+            cell.persoPrice.text = persoAd.price + "€"
+            let url = (URL(string: "\(persoAd.image)") ?? nil)!
+            cell.persoImage.load(url: url)
+        } else {
+            persoTableView.isHidden = true
+            noAdsLabel.isHidden = false
+        }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 100
+        return 95
     }
 }

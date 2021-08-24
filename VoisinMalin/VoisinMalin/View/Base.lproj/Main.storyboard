@@ -114,21 +114,38 @@
                                     <outlet property="delegate" destination="eei-0T-Qg6" id="6hj-3z-xN3"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Are-ke-NwO">
+                                <rect key="frame" x="50" y="88" width="314" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="kF0-gK-Ap9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="btt-jc-Lz1"/>
                         <color key="backgroundColor" red="0.92219065656565657" green="0.53991410055969991" blue="0.0067166353602180198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dTp-Vt-opG" firstAttribute="leading" secondItem="btt-jc-Lz1" secondAttribute="leading" constant="34" id="2MU-qU-gej"/>
                             <constraint firstItem="NlP-OB-wDQ" firstAttribute="bottom" secondItem="btt-jc-Lz1" secondAttribute="bottom" id="EUV-aw-V3Q"/>
+                            <constraint firstItem="Are-ke-NwO" firstAttribute="leading" secondItem="btt-jc-Lz1" secondAttribute="leading" constant="50" id="Ev8-tc-NCJ"/>
                             <constraint firstItem="NlP-OB-wDQ" firstAttribute="trailing" secondItem="btt-jc-Lz1" secondAttribute="trailing" constant="-20" id="Jq4-ku-NUt"/>
                             <constraint firstItem="btt-jc-Lz1" firstAttribute="trailing" secondItem="dTp-Vt-opG" secondAttribute="trailing" constant="34" id="NVJ-j8-e35"/>
                             <constraint firstItem="dTp-Vt-opG" firstAttribute="top" secondItem="btt-jc-Lz1" secondAttribute="top" constant="40" id="QDe-0k-FND"/>
+                            <constraint firstItem="btt-jc-Lz1" firstAttribute="trailing" secondItem="Are-ke-NwO" secondAttribute="trailing" constant="50" id="V1F-d5-T7E"/>
                             <constraint firstItem="NlP-OB-wDQ" firstAttribute="top" secondItem="dTp-Vt-opG" secondAttribute="bottom" constant="34" id="WwZ-zf-93r"/>
                             <constraint firstItem="NlP-OB-wDQ" firstAttribute="leading" secondItem="btt-jc-Lz1" secondAttribute="leading" constant="20" id="dlm-b8-kg0"/>
+                            <constraint firstItem="Are-ke-NwO" firstAttribute="top" secondItem="btt-jc-Lz1" secondAttribute="top" id="kli-GN-GUp"/>
                             <constraint firstItem="NlP-OB-wDQ" firstAttribute="top" secondItem="CKY-Mz-kbU" secondAttribute="top" constant="210" id="nwW-Id-z3h"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zIo-12-P5T">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Dh7-lZ-c89">
+                            <connections>
+                                <action selector="reloadButton:" destination="eei-0T-Qg6" id="CWV-26-i1U"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person" catalog="system" landscapeImage="person" id="IvB-I2-iPq">
                             <color key="tintColor" red="0.91520675510000005" green="0.53582524229999995" blue="0.0066657691760000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -138,6 +155,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adsTableView" destination="NlP-OB-wDQ" id="Lg5-9g-GQN"/>
+                        <outlet property="locationLabel" destination="Are-ke-NwO" id="wgo-ZK-V55"/>
                         <outlet property="presDeChezVous" destination="dTp-Vt-opG" id="E37-dF-IHJ"/>
                         <segue destination="1ft-dF-sY5" kind="show" identifier="searchToDetail" id="jPG-pp-3Pg"/>
                     </connections>
@@ -201,7 +219,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-BF-uvu">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgZ-BF-uvu">
                                                     <rect key="frame" x="0.0" y="-16" width="187" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -255,6 +273,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucunes annonces postées" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKR-cT-DAR">
+                                <rect key="frame" x="80" y="573" width="254" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NBp-2S-acv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r5h-F8-ncZ"/>
                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -267,9 +294,12 @@
                             <constraint firstItem="Ydb-AQ-iRt" firstAttribute="top" secondItem="r5h-F8-ncZ" secondAttribute="top" constant="50" id="Kxh-lc-t01"/>
                             <constraint firstItem="Ydy-yj-lkg" firstAttribute="top" secondItem="8y5-He-URq" secondAttribute="bottom" constant="8" id="Nj2-FY-GMV"/>
                             <constraint firstItem="r5h-F8-ncZ" firstAttribute="trailing" secondItem="Ydy-yj-lkg" secondAttribute="trailing" constant="20" id="Qtp-ws-66j"/>
+                            <constraint firstItem="r5h-F8-ncZ" firstAttribute="trailing" secondItem="pKR-cT-DAR" secondAttribute="trailing" constant="80" id="VCn-Jp-iwd"/>
                             <constraint firstItem="8y5-He-URq" firstAttribute="top" secondItem="M3L-e9-gAb" secondAttribute="bottom" constant="50" id="VJM-oh-Ske"/>
                             <constraint firstItem="r5h-F8-ncZ" firstAttribute="trailing" secondItem="JN2-g1-E6T" secondAttribute="trailing" constant="20" id="YGO-wg-r4Z"/>
                             <constraint firstItem="8y5-He-URq" firstAttribute="leading" secondItem="r5h-F8-ncZ" secondAttribute="leading" constant="130" id="Z4Q-ii-sie"/>
+                            <constraint firstItem="pKR-cT-DAR" firstAttribute="leading" secondItem="r5h-F8-ncZ" secondAttribute="leading" constant="80" id="ZX7-SH-nPS"/>
+                            <constraint firstItem="r5h-F8-ncZ" firstAttribute="bottom" secondItem="pKR-cT-DAR" secondAttribute="bottom" constant="219" id="ZxQ-94-RxI"/>
                             <constraint firstItem="r5h-F8-ncZ" firstAttribute="trailing" secondItem="Ydb-AQ-iRt" secondAttribute="trailing" constant="20" id="b5k-oa-jHC"/>
                             <constraint firstItem="M3L-e9-gAb" firstAttribute="top" secondItem="JN2-g1-E6T" secondAttribute="bottom" constant="55" id="fdc-nV-MJ1"/>
                             <constraint firstItem="r5h-F8-ncZ" firstAttribute="trailing" secondItem="M3L-e9-gAb" secondAttribute="trailing" constant="20" id="haJ-cf-P8j"/>
@@ -287,6 +317,7 @@
                     <connections>
                         <outlet property="adPost" destination="M3L-e9-gAb" id="xJ5-7O-oqn"/>
                         <outlet property="nameLabel" destination="JN2-g1-E6T" id="8bP-h0-fQu"/>
+                        <outlet property="noAdsLabel" destination="pKR-cT-DAR" id="c8V-kg-XWj"/>
                         <outlet property="persoTableView" destination="Ydy-yj-lkg" id="WdQ-aS-NOR"/>
                         <outlet property="postedAdsLabel" destination="8y5-He-URq" id="O79-95-HjD"/>
                     </connections>
@@ -317,7 +348,7 @@
                                     <constraint firstAttribute="height" constant="40" id="23S-1V-Xaa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="address-level2"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description de l'annonce" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-CQ-SQ4">
                                 <rect key="frame" x="20" y="468" width="374" height="34"/>
@@ -452,6 +483,9 @@
                                 <state key="normal" title="Appeler">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="callButton:" destination="1ft-dF-sY5" eventType="touchUpInside" id="fBi-0D-2Kj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-gk-1A5">
                                 <rect key="frame" x="238" y="720" width="140" height="46"/>
@@ -459,6 +493,9 @@
                                 <state key="normal" title="Envoyer un mail">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="mailButton:" destination="1ft-dF-sY5" eventType="touchUpInside" id="Rgy-4I-u19"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-vi-V9T">
                                 <rect key="frame" x="0.0" y="88" width="414" height="290"/>
@@ -494,6 +531,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nEA-B5-QLu">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7TT-x4-udx">
+                            <rect key="frame" x="178.5" y="4" width="57" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" systemColor="systemRedColor"/>
+                            </state>
+                            <connections>
+                                <action selector="delButtonPressed:" destination="1ft-dF-sY5" eventType="touchUpInside" id="I2u-Iq-naC"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icon-star" id="QeE-ZA-BjX">
                             <connections>
                                 <action selector="favoriteButton:" destination="1ft-dF-sY5" id="1IW-Kc-fLG"/>
@@ -503,6 +552,7 @@
                     <connections>
                         <outlet property="adDescriptionImage" destination="RtN-vi-V9T" id="ODD-Pt-Or9"/>
                         <outlet property="callButton" destination="jkJ-Rx-2ma" id="e5Q-vY-6Hu"/>
+                        <outlet property="delButton" destination="7TT-x4-udx" id="YbR-il-iIH"/>
                         <outlet property="descriptinTitleLabel" destination="XtX-5c-olg" id="Hg1-HE-RvT"/>
                         <outlet property="descriptionLabel" destination="7hQ-62-ZiN" id="qjg-LH-6Jr"/>
                         <outlet property="descriptionPriceLabel" destination="9vr-cu-6h8" id="Mwg-KP-kbv"/>

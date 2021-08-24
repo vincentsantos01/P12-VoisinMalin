@@ -62,5 +62,9 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>please done acces</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>please acces</string>
 </dict>
 </plist>
