@@ -53,8 +53,8 @@ class HomeViewController: UIViewController {
                     for doc in snapshotDocument {
                         print(doc.data())
                         let data = doc.data()
-                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail)
+                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let id = data[K.FStore.documentID], let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
+                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String)
                             self.privateAds.append(newad)
                             self.persoTableView.reloadData()
                         }

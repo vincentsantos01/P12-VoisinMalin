@@ -131,7 +131,9 @@ final class DatabaseManager {
     }
     
     func deleteDoc(document: String) {
-        db.collection("ads").document(document).delete() { err in
+        let ref = db.collection("ads").document()
+        let idCurrentAd = ref.documentID
+        db.collection("ads").document(idCurrentAd).delete() { err in
             if let err = err {
                 print("error \(err)")
             } else {

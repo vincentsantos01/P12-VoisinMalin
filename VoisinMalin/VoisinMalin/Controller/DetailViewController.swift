@@ -17,19 +17,20 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var adDescriptionImage: UIImageView!
     @IBOutlet weak var descriptinTitleLabel: UILabel!
     @IBOutlet weak var descriptionPriceLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var mailButton: UIButton!
     @IBOutlet weak var delButton: UIButton!
     
     
-       
+    
     var demoAd: DefaultAds?
     var privateAds = [DefaultAds]()
     private let authService: AuthService = AuthService()
     //var fbm = DatabaseManager()
     //var db = Firestore.firestore()
     var database = DatabaseManager()
+    //var uid = Auth.auth().currentUser!.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,14 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     
     func styles() {
-        descriptionLabel.layer.cornerRadius = 40
+        descriptionLabel.layer.cornerRadius = 20
         descriptionLabel.clipsToBounds = true
-        descriptionPriceLabel.layer.cornerRadius = 20
+        descriptionPriceLabel.layer.cornerRadius = 10
         descriptionPriceLabel.clipsToBounds = true
-        descriptinTitleLabel.layer.cornerRadius = 20
+        descriptinTitleLabel.layer.cornerRadius = 10
         descriptinTitleLabel.clipsToBounds = true
+        callButton.layer.cornerRadius = 10
+        callButton.clipsToBounds = true
     }
     
     
@@ -110,10 +113,22 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     @IBAction func delButtonPressed(_ sender: Any) {
         
-        database.deleteDoc(document: authService.currentUID!)
+        database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: descriptinTitleLabel.text!).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.database.db.collection(K.FStore.collectionName).document(document.documentID).delete() { err in
+                        if let err = err {
+                            print("error \(err)")
+                        } else {
+                            print("annonce suprimée")
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }
+            }
+        }
+        
     }
-    
-    
-    
-    
 }

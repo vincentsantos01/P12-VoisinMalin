@@ -26,5 +26,6 @@ struct K {
         static let priceField = "Price"
         static let phoneField = "Phone"
         static let mailField = "Mail"
+        static let documentID = "documentID"
     }
 }

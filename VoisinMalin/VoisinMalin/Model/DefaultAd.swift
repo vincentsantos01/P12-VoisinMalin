@@ -24,6 +24,7 @@ struct DefaultAds {
     let description: String
     let phone: String
     let mail: String
+    let documentID: String
 }
 class adessai {
     var key: String

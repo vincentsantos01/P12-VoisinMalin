@@ -15,27 +15,28 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var adsTableView: UITableView!
     @IBOutlet weak var presDeChezVous: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     var locationManager: CLLocationManager?
-    //var databaseRef: DatabaseReference?
-    //var data = Database.database()
-    //var defaultAdsessai: [DefaultAds] = []
+    var currentLocation: CLLocation?
     var demo: DefaultAds?
-    //var exDb: DatabaseManager?
     var privateAds = [DefaultAds]()
-    //var db = Firestore.firestore()
     var database = DatabaseManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         styles()
-        loadData()
-        adsTableView.reloadData()
         locationManager = CLLocationManager()
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
         locationManager?.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        privateAds = []
+        loadData()
+        adsTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,8 +61,8 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
                     for doc in snapshotDocument {
                         print(doc.data())
                         let data = doc.data()
-                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail)
+                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
+                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String)
                             self.privateAds.append(newad)
                             self.adsTableView?.reloadData()
                         }
@@ -79,12 +80,7 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         presDeChezVous.clipsToBounds = true
         
     }
-    
-    @IBAction func reloadButton(_ sender: UIBarButtonItem) {
-        privateAds = []
-        loadData()
-        adsTableView.reloadData()
-    }
+
     
     
 }
@@ -109,7 +105,7 @@ extension SearchListController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let adsDetail = privateAds[indexPath.row]
-        demo = DefaultAds(title: adsDetail.title,price: adsDetail.price, location: adsDetail.location, image: adsDetail.image, description: adsDetail.description, phone: adsDetail.phone, mail: adsDetail.mail)
+        demo = DefaultAds(title: adsDetail.title,price: adsDetail.price, location: adsDetail.location, image: adsDetail.image, description: adsDetail.description, phone: adsDetail.phone, mail: adsDetail.mail, documentID: adsDetail.documentID )
         performSegue(withIdentifier: "searchToDetail", sender: self)
     }
 }

@@ -22,7 +22,7 @@ class AdCreateViewController: UIViewController {
     private let FService: AuthFirestore = AuthFirestore()
     private let storage = DatabaseManager()
     private let unique = UUID().uuidString
-    let ggg = SearchListController()
+    
     
     
     override func viewDidLoad() {
@@ -46,15 +46,11 @@ class AdCreateViewController: UIViewController {
     @IBAction func publishButton(_ sender: UIButton) {
         
         if let currentUserMail = UserDefaults.standard.string(forKey: "userMail"), let title = titleLabel.text, let location = locationLabel.text, let image = UserDefaults.standard.string(forKey: "url"), let description = descriptionLabel.text, let price = priceLabel.text, let phone = phoneLabel.text {
-            FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.locationField: location, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
+            FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.documentID: unique, K.FStore.locationField: location, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
                 if let e = error {
                     print("raté, \(e)")
                 } else {
                     print("annonce sauvegardée")
-                    
-                    self.ggg.privateAds = []
-                    self.ggg.loadData()
-                    self.ggg.adsTableView?.reloadData()
                     self.navigationController?.popToRootViewController(animated: true)
                     
                 }
