@@ -1,5 +1,5 @@
 //
-//  Location.swift
+//  LocationManager.swift
 //  VoisinMalin
 //
 //  Created by vincent on 24/08/2021.
@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 
-final class Location {
+/*final class locationManager {
     
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
@@ -24,4 +24,4 @@ final class Location {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
     
-}
+}*/

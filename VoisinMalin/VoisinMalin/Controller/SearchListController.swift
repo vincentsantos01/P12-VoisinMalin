@@ -15,27 +15,39 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var adsTableView: UITableView!
     @IBOutlet weak var presDeChezVous: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
+    
+    
+    
     
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
     var demo: DefaultAds?
+    
     var privateAds = [DefaultAds]()
+    
     var database = DatabaseManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         styles()
+        
+        sortBasedOnSegmentPressed()
         locationManager = CLLocationManager()
+        locationManager?.startUpdatingLocation()
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
         locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        adsTableView.reloadData()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         privateAds = []
         loadData()
+        sortBasedOnSegmentPressed()
         adsTableView.reloadData()
     }
     
@@ -46,9 +58,41 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            locationLabel.text = "Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)"
+            let currentGPS = "Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)"
+            locationLabel.text = currentGPS
+            locationManager?.stopUpdatingLocation()
+            getAddress(fromLocation: location)
             
         }
+    }
+    
+    func getAddress(fromLocation location: CLLocation) {
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                self.presentAlert(titre: "error", message: "error")
+            }
+            else if let placemarks = placemarks {
+                for placemark in placemarks {
+                    let address = [placemark.name,
+                    placemark.postalCode,
+                        placemark.locality].compactMap({$0}).joined(separator: ",  ")
+                    print(address)
+                }
+            }
+        }
+    }
+    
+    func sortBasedOnSegmentPressed() {
+        switch sortSegmentedControl.selectedSegmentIndex {
+        case 0: // a-z
+            privateAds.sort(by: {$0.title < $1.title})
+        case 1: //distance
+           print("ff")
+        default:
+            print("oups")
+        }
+        adsTableView.reloadData()
     }
     
     func loadData() {
@@ -61,8 +105,8 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
                     for doc in snapshotDocument {
                         print(doc.data())
                         let data = doc.data()
-                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String)
+                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let gpslong = data[K.FStore.gpsLocationLong], let gpslat = data[K.FStore.gpsLocationLat], let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
+                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String)
                             self.privateAds.append(newad)
                             self.adsTableView?.reloadData()
                         }
@@ -73,6 +117,8 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    
     func styles() {
         adsTableView.layer.cornerRadius = 40
         adsTableView.clipsToBounds = true
@@ -80,37 +126,48 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         presDeChezVous.clipsToBounds = true
         
     }
-
     
+    @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
+        //searchBar(searchBar, textDidChange: "")
+    }
+ 
+    
+
     
 }
 
-extension SearchListController: UITableViewDataSource {
+extension SearchListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return privateAds.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdsCell", for: indexPath) as! TableViewCell
+        privateAds.sort(by: {$0.title < $1.title})
         let currentAd = privateAds[indexPath.row]
         cell.titleAd.text = currentAd.title
         cell.locationAd.text = currentAd.location
         cell.priceAd.text = currentAd.price + "€"
         let url = (URL(string: "\(currentAd.image)") ?? nil)!
         cell.imageAd.load(url: url)
+        let lat = (currentAd.gpsLocationLat as NSString).doubleValue
+        let long = (currentAd.gpsLocationLong as NSString).doubleValue
+        let adDistance = CLLocation(latitude: lat, longitude: long)
         
+        let distance = (locationManager?.location?.distance(from: adDistance) ?? 0)/1000
+        cell.distanceLabel.text = "\(String(format: "%.1f",distance)) Kms"
         
         return cell
-    }
+        }
+        
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let adsDetail = privateAds[indexPath.row]
-        demo = DefaultAds(title: adsDetail.title,price: adsDetail.price, location: adsDetail.location, image: adsDetail.image, description: adsDetail.description, phone: adsDetail.phone, mail: adsDetail.mail, documentID: adsDetail.documentID )
+        demo = DefaultAds(title: adsDetail.title,price: adsDetail.price, location: adsDetail.location, image: adsDetail.image, description: adsDetail.description, phone: adsDetail.phone, mail: adsDetail.mail, documentID: adsDetail.documentID, gpsLocationLat: adsDetail.gpsLocationLat, gpsLocationLong: adsDetail.gpsLocationLong)
         performSegue(withIdentifier: "searchToDetail", sender: self)
     }
-}
-
-extension SearchListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 250

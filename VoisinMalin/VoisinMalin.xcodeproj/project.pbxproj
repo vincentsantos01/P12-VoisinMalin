@@ -35,7 +35,8 @@
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
-		BFF42B2B26D4ECC30098AA01 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2A26D4ECC30098AA01 /* Location.swift */; };
+		BFF42B2B26D4ECC30098AA01 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */; };
+		BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B7B26DE1D530098AA01 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +92,8 @@
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
-		BFF42B2A26D4ECC30098AA01 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BFF42B7B26DE1D530098AA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 		BFA8B27426B211C800BF0ABF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */,
 				BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */,
 			);
 			path = Modules;
@@ -212,7 +215,7 @@
 				BF824D2026AD5681000552FD /* Password.swift */,
 				BF824D2226AD6387000552FD /* Constants.swift */,
 				BFA8B27726B3EBAD00BF0ABF /* User.swift */,
-				BFF42B2A26D4ECC30098AA01 /* Location.swift */,
+				BFF42B7B26DE1D530098AA01 /* StringExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,13 +436,14 @@
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
 				BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
-				BFF42B2B26D4ECC30098AA01 /* Location.swift in Sources */,
+				BFF42B2B26D4ECC30098AA01 /* LocationManager.swift in Sources */,
 				BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */,
 				BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */,
 				BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */,
 				BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */,
 				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
 				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,
+				BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */,
 				BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

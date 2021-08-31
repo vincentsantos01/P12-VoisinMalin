@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Constants {
     
@@ -27,5 +28,7 @@ struct K {
         static let phoneField = "Phone"
         static let mailField = "Mail"
         static let documentID = "documentID"
+        static let gpsLocationLat = "gpsLocationLat"
+        static let gpsLocationLong = "gpsLocationLong"
     }
 }

@@ -14,6 +14,9 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var titleAd: UILabel!
     @IBOutlet weak var locationAd: UILabel!
     @IBOutlet weak var priceAd: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    
     
     
     
@@ -29,16 +32,7 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    var currentLocation: CLLocation!
-    var kkk: DefaultAds? {
-        didSet {
-            guard let currentLocation = currentLocation else {
-                locationAd.text = "Distance: ---"
-                return
-            }
-            //let distanceInMeters = kkk?.location.dis
-        }
-    }
+    
     
     
 }

@@ -8,6 +8,7 @@
 import UIKit
 //import FirebaseDatabase
 //import Firebase
+import CoreLocation
 
 class HomeViewController: UIViewController {
     
@@ -21,10 +22,10 @@ class HomeViewController: UIViewController {
     
     private let authService: AuthService = AuthService()
     private let databaseManager: DatabaseManager = DatabaseManager()
-    //var databaseRef: DatabaseReference?
-    var essai: [adessai] = [adessai]()
+    
+    //var essai: [adessai] = [adessai]()
     var privateAds = [DefaultAds]()
-    //var db = Firestore.firestore()
+    var fff: DefaultAds?
     var database = DatabaseManager()
     
     
@@ -42,6 +43,11 @@ class HomeViewController: UIViewController {
         uploadData()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let recipeVC = segue.destination as? DetailViewController else { return }
+        recipeVC.demoAd = fff
+    }
 
     private func uploadData() {
         privateAds = []
@@ -53,8 +59,8 @@ class HomeViewController: UIViewController {
                     for doc in snapshotDocument {
                         print(doc.data())
                         let data = doc.data()
-                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let id = data[K.FStore.documentID], let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String)
+                        if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let id = data[K.FStore.documentID], let gpslat = data[K.FStore.gpsLocationLat], let gpslong = data[K.FStore.gpsLocationLong], let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
+                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String)
                             self.privateAds.append(newad)
                             self.persoTableView.reloadData()
                         }
@@ -127,6 +133,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             noAdsLabel.isHidden = false
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let adsDetail = privateAds[indexPath.row]
+        fff = DefaultAds(title: adsDetail.title, price: adsDetail.price, location: adsDetail.location, image: adsDetail.image, description: adsDetail.description, phone: adsDetail.phone, mail: adsDetail.mail, documentID: adsDetail.documentID, gpsLocationLat: adsDetail.gpsLocationLat, gpsLocationLong: adsDetail.gpsLocationLong)
+        performSegue(withIdentifier: "homeToDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

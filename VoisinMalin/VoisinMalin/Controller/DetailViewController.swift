@@ -48,6 +48,8 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         descriptinTitleLabel.clipsToBounds = true
         callButton.layer.cornerRadius = 10
         callButton.clipsToBounds = true
+        mailButton.layer.cornerRadius = 10
+        mailButton.clipsToBounds = true
     }
     
     

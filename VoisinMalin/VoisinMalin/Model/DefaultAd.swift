@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct adsData {
     let hit: [DefaultAds]
@@ -25,6 +26,9 @@ struct DefaultAds {
     let phone: String
     let mail: String
     let documentID: String
+    let gpsLocationLat: String
+    let gpsLocationLong: String
+    
 }
 class adessai {
     var key: String
