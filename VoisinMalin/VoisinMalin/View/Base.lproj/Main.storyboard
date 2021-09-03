@@ -462,6 +462,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csH-kC-utx">
+                                <rect key="frame" x="186" y="792" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oxE-FS-7Gg"/>
                         <color key="backgroundColor" red="0.92219065659999999" green="0.5399141006" blue="0.0067166353599999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -509,6 +516,7 @@
                         <outlet property="locationLabel" destination="8Mg-hO-swY" id="leA-Lt-yel"/>
                         <outlet property="phoneLabel" destination="Q4l-KF-Bnx" id="Bb4-cA-vb8"/>
                         <outlet property="priceLabel" destination="hgd-bH-1xE" id="WMP-Gp-eE3"/>
+                        <outlet property="sortDistance" destination="csH-kC-utx" id="Avs-LF-Jqb"/>
                         <outlet property="titleLabel" destination="JZa-Iw-1if" id="gme-3X-IW1"/>
                         <outlet property="uploadImage" destination="176-hj-C4c" id="ISG-JF-kMj"/>
                     </connections>

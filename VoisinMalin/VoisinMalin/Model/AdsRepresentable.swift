@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct AdsRepresentable {
+/*struct AdsRepresentable {
     let title: String
     let imageData: Data?
     let description: String
     let price: String
     let location: String
-}
+}*/

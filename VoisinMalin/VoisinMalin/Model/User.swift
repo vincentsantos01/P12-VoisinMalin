@@ -8,7 +8,7 @@
 import Foundation
 import Firebase
 
-struct Userssssss {
+/*struct Userssssss {
     let username: String
     let mail: String
     let userID: String
@@ -32,4 +32,4 @@ struct Userssssss {
         self.userID = userID
     }
     
-}
+}*/

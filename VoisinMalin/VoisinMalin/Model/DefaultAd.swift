@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import CoreLocation
 
-struct adsData {
+/*struct adsData {
     let hit: [DefaultAds]
 }
 struct ooo {
@@ -16,7 +15,7 @@ struct ooo {
 }
 struct RecipeData {
     let hits: [DefaultAds]
-}
+}*/
 struct DefaultAds {
     let title: String
     let price: String
@@ -28,9 +27,10 @@ struct DefaultAds {
     let documentID: String
     let gpsLocationLat: String
     let gpsLocationLong: String
+    var sortDistance: String
     
 }
-class adessai {
+/*class adessai {
     var key: String
     var price: String
     var location: String
@@ -49,4 +49,4 @@ class adessai {
         self.mail = dictionary["Mail"] as! String
     }
     
-}
+}*/

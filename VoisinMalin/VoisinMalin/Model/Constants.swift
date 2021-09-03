@@ -30,5 +30,6 @@ struct K {
         static let documentID = "documentID"
         static let gpsLocationLat = "gpsLocationLat"
         static let gpsLocationLong = "gpsLocationLong"
+        static let sortDistance = "sortDistance"
     }
 }

@@ -20,6 +20,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var phoneLabel: UITextField!
     @IBOutlet weak var hiddenGPSLat: UILabel!
     @IBOutlet weak var hiddenGPSLong: UILabel!
+    @IBOutlet weak var sortDistance: UILabel!
     
     private let authService: AuthService = AuthService()
     private let FService: AuthFirestore = AuthFirestore()
@@ -28,7 +29,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
-    
+    var adsAddress: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +59,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     func getAddress(fromLocation location: CLLocation) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            if let error = error {
+            if let _ = error {
                 self.presentAlert(titre: "error", message: "error")
             }
             else if let placemarks = placemarks {
@@ -67,6 +68,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
                                    placemark.postalCode,
                                    placemark.locality].compactMap({$0}).joined(separator: ",  ")
                     self.locationLabel.text = address
+                    self.adsAddress = address
                     print(address)
                 }
             }
@@ -92,8 +94,8 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
         if titleVerif!.isBlank || descriptionVerif!.isBlank || priceVerif!.isBlank || phoneVerif!.isBlank || priceVerif!.isNumeric || phoneVerif!.isNumeric {
             presentAlert(titre: "Attention", message: "Un champ est vide ou mal entrer")
         } else {
-            if let currentUserMail = UserDefaults.standard.string(forKey: "userMail"), let title = titleLabel.text, let gpslat = hiddenGPSLat.text, let gpslong = hiddenGPSLong.text, let location = locationLabel.text, let image = UserDefaults.standard.string(forKey: "url"), let description = descriptionLabel.text, let price = priceLabel.text, let phone = phoneLabel.text {
-                FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.documentID: unique, K.FStore.locationField: location, K.FStore.gpsLocationLat: gpslat, K.FStore.gpsLocationLong: gpslong, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
+            if let currentUserMail = UserDefaults.standard.string(forKey: "userMail"), let title = titleLabel.text, let gpslat = hiddenGPSLat.text, let gpslong = hiddenGPSLong.text, let location = locationLabel.text, let image = UserDefaults.standard.string(forKey: "url"), let sortD = sortDistance.text, let description = descriptionLabel.text, let price = priceLabel.text, let phone = phoneLabel.text {
+                FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.documentID: unique, K.FStore.locationField: location, K.FStore.gpsLocationLat: gpslat, K.FStore.gpsLocationLong: gpslong, K.FStore.sortDistance: sortD, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
                     if let e = error {
                         print("raté, \(e)")
                     } else {
@@ -108,11 +110,12 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func adressHidden(_ sender: UISwitch) {
-        if sender.isOn {
+       /* if sender.isOn {
         locationLabel.text = ""
         } else {
-            getAddress
-        }
+            locationLabel.text = adsAddress
+        }*/
+        locationLabel.text = sender.isOn ? "" : adsAddress
     }
     
 }
