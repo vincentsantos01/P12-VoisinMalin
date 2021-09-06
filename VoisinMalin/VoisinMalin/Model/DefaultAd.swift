@@ -27,7 +27,7 @@ struct DefaultAds {
     let documentID: String
     let gpsLocationLat: String
     let gpsLocationLong: String
-    var sortDistance: String
+    var sortDistance: Double
     
 }
 /*class adessai {

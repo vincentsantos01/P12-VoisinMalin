@@ -23,7 +23,7 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
     var demo: DefaultAds?
-    var sortDistance: Double?
+    var sortedDistance: Double?
     var privateAds = [DefaultAds]()
     var aaa: Double?
     var database = DatabaseManager()
@@ -108,8 +108,9 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
                         print(doc.data())
                         let data = doc.data()
                         if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let gpslong = data[K.FStore.gpsLocationLong], let gpslat = data[K.FStore.gpsLocationLat], let sortD = data[K.FStore.sortDistance], let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: sortD as! String)
+                            let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: (sortD as! NSString).doubleValue)
                             self.privateAds.append(newad)
+                            self.privateAds.sort(by: {$0.sortDistance > $1.sortDistance})
                             self.adsTableView?.reloadData()
                         }
                     }
@@ -130,16 +131,37 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
+        
+        switch sortSegmentedControl.selectedSegmentIndex {
+        case 0:
+            presDeChezVous.text = "Case ordre alphabet"
+            privateAds.sort(by: {$0.title < $1.title})
+            adsTableView.reloadData()
+        case 1:
+            presDeChezVous.text = "case localisation"
+            //privateAds.sort(by: {$0.sortDistance.rounded() < $1.sortDistance.rounded()})
+            //adsTableView.reloadData()
+            //print(privateAds.sort(by: {$0.sortDistance < $1.sortDistance}))
+            
+        default:
+            break
+           //privateAds.sort(by: {$0.title < $1.title})
+        }
+        
+       /* if sender.selectedSegmentIndex == 0 {
             privateAds.sort(by: {$0.title < $1.title})
             //print(privateAds)
             adsTableView.reloadData()
             
         } else if sender.selectedSegmentIndex == 1 {
-            privateAds.sort(by: {$0.price < $1.price})
+            print("bouton")
+            
+            // privateAds.sort { Double($0.sortDistance) ?? 0 < Double($1.sortDistance) ?? 0 }
+            privateAds.sorted(by: {$0.price < $1.price})
+            //privateAds.sort(by: {$0.sortDistance > $1.sortDistance})
             adsTableView.reloadData()
             
-        }
+        }*/
     }
  
     
@@ -170,10 +192,14 @@ extension SearchListController: UITableViewDataSource, UITableViewDelegate {
         let adDistance = CLLocation(latitude: lat, longitude: long)
         
         let distance = (locationManager?.location?.distance(from: adDistance) ?? 0)/1000
-        
+        //print(distance)
         cell.distanceLabel.text = "\(String(format: "%.0f",distance)) Kms"
-        //currentAd.sortDistance = String(format: "%.0f",distance)
-        //print(adDistance)
+        currentAd.sortDistance = distance
+        
+        //print(currentAd.sortDistance)
+        sortedDistance = Double(currentAd.sortDistance)
+        
+        //print(currentAd.sortDistance)
         
         return cell
         }
