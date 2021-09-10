@@ -20,9 +20,8 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager?
     var currentLocation: CLLocation?
     var demo: DefaultAds?
-    //var sortedDistance: Double?
     var privateAds = [DefaultAds]()
-    var aaa: Double?
+    //var aaa: Double?
     var database = DatabaseManager()
     
     
@@ -46,7 +45,6 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         super.viewWillAppear(animated)
         privateAds = []
         loadData()
-        
         adsTableView.reloadData()
     }
     
@@ -93,16 +91,12 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
                         print(doc.data())
                         let data = doc.data()
                         if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let gpslong = data[K.FStore.gpsLocationLong], let gpslat = data[K.FStore.gpsLocationLat], let sortD = data[K.FStore.sortDistance], let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String {
-                            
-                            //let jjj = self.privateAds
                             let lat = (data[K.FStore.gpsLocationLat] as! NSString).doubleValue
-                            //print(lat)
                             let long = (data[K.FStore.gpsLocationLong] as! NSString).doubleValue
-                            //print(long)
                             let adDistance = CLLocation(latitude: lat, longitude: long)
                             let distance = (self.locationManager?.location?.distance(from: adDistance) ?? 0)/1000
-                            print(distance)
                             let roundedDistance = distance.rounded()
+                            print(roundedDistance)
                             
                             var newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: (sortD as! NSString).doubleValue)
                             newad.sortDistance = roundedDistance
@@ -131,18 +125,13 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         
         switch sortSegmentedControl.selectedSegmentIndex {
         case 0:
-            presDeChezVous.text = "Case ordre alphabet"
             privateAds.sort(by: {$0.title < $1.title})
             adsTableView.reloadData()
         case 1:
-            presDeChezVous.text = "case localisation"
             privateAds.sort(by: {$0.sortDistance < $1.sortDistance})
             adsTableView.reloadData()
-            //print(privateAds.sort(by: {$0.sortDistance < $1.sortDistance}))
-            
         default:
             break
-           //privateAds.sort(by: {$0.title < $1.title})
         }
     }
  
