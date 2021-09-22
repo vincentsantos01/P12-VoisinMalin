@@ -31,5 +31,6 @@ struct K {
         static let gpsLocationLat = "gpsLocationLat"
         static let gpsLocationLong = "gpsLocationLong"
         static let sortDistance = "sortDistance"
+        static let isFavorites = "isFavorites"
     }
 }

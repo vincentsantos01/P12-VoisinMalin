@@ -28,6 +28,7 @@ struct DefaultAds {
     let gpsLocationLat: String
     let gpsLocationLong: String
     var sortDistance: Double
+    let isFavotites: Bool
     
 }
 /*class adessai {

@@ -91,11 +91,12 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
         let descriptionVerif = descriptionLabel.text
         let priceVerif = priceLabel.text
         let phoneVerif = phoneLabel.text
+        let ggg = false
         if titleVerif!.isBlank || descriptionVerif!.isBlank || priceVerif!.isBlank || phoneVerif!.isBlank || priceVerif!.isNumeric || phoneVerif!.isNumeric {
             presentAlert(titre: "Attention", message: "Un champ est vide ou mal entrer")
         } else {
             if let currentUserMail = UserDefaults.standard.string(forKey: "userMail"), let title = titleLabel.text, let gpslat = hiddenGPSLat.text, let gpslong = hiddenGPSLong.text, let location = locationLabel.text, let image = UserDefaults.standard.string(forKey: "url"), let sortD = sortDistance.text, let description = descriptionLabel.text, let price = priceLabel.text, let phone = phoneLabel.text {
-                FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.documentID: unique, K.FStore.locationField: location, K.FStore.gpsLocationLat: gpslat, K.FStore.gpsLocationLong: gpslong, K.FStore.sortDistance: sortD, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
+                FService.db.collection(K.FStore.collectionName).addDocument(data: [K.FStore.descriptionField: description, K.FStore.isFavorites: ggg, K.FStore.documentID: unique, K.FStore.locationField: location, K.FStore.gpsLocationLat: gpslat, K.FStore.gpsLocationLong: gpslong, K.FStore.sortDistance: sortD, K.FStore.phoneField: phone, K.FStore.imageAds : image, K.FStore.priceField : price, K.FStore.titleField: title, K.FStore.mailField: currentUserMail]) { (error) in
                     if let e = error {
                         print("raté, \(e)")
                     } else {

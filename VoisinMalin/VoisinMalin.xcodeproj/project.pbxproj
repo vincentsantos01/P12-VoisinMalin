@@ -23,6 +23,7 @@
 		BF824D2126AD5681000552FD /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2026AD5681000552FD /* Password.swift */; };
 		BF824D2326AD6387000552FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2226AD6387000552FD /* Constants.swift */; };
 		BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2626ADA10B000552FD /* AdCreateViewController.swift */; };
+		BFA0C45626FB470E00C5D482 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */; };
 		BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */; };
 		BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27726B3EBAD00BF0ABF /* User.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
@@ -35,7 +36,6 @@
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
-		BFF42B2B26D4ECC30098AA01 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */; };
 		BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B7B26DE1D530098AA01 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,7 @@
 		BF824D2026AD5681000552FD /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		BF824D2226AD6387000552FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF824D2626ADA10B000552FD /* AdCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCreateViewController.swift; sourceTree = "<group>"; };
+		BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		BFA8B27726B3EBAD00BF0ABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,7 +93,6 @@
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
-		BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BFF42B7B26DE1D530098AA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,7 +143,6 @@
 		BFA8B27426B211C800BF0ABF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				BFF42B2A26D4ECC30098AA01 /* LocationManager.swift */,
 				BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */,
 			);
 			path = Modules;
@@ -228,6 +227,7 @@
 				BF73495D26A9CF60005671FA /* TableViewCell.swift */,
 				BF6E034326BC25E500E50B94 /* Authentification.storyboard */,
 				BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */,
+				BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 				BF73495626A811F4005671FA /* UIImage.swift in Sources */,
 				BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
-				BFF42B2B26D4ECC30098AA01 /* LocationManager.swift in Sources */,
+				BFA0C45626FB470E00C5D482 /* FavoriteTableViewCell.swift in Sources */,
 				BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */,
 				BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */,
 				BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */,

@@ -5,10 +5,10 @@
 //  Created by vincent on 21/07/2021.
 //
 
-//import Foundation
 import UIKit
-//import Firebase
 import MessageUI
+import grpc
+import FirebaseFirestore
 
 class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
@@ -21,23 +21,31 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var callButton: UIButton!
     @IBOutlet weak var mailButton: UIButton!
     @IBOutlet weak var delButton: UIButton!
+    @IBOutlet weak var favIcon: UIBarButtonItem!
     
     
     
     var demoAd: DefaultAds?
     var privateAds = [DefaultAds]()
     private let authService: AuthService = AuthService()
-    //var fbm = DatabaseManager()
-    //var db = Firestore.firestore()
+    private let unique = UUID().uuidString
     var database = DatabaseManager()
-    //var uid = Auth.auth().currentUser!.uid
+    var inFavorite: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateAds()
         styles()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkFavorites()
+        
         
     }
+    
     
     func styles() {
         descriptionLabel.layer.cornerRadius = 20
@@ -90,10 +98,52 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         controller.dismiss(animated: true, completion: nil)
     }
     
-    
+    func checkFavorites() {
+        database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: descriptinTitleLabel.text!).whereField("\(authService.currentUID ?? "oups")", isEqualTo: "")
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for _ in querySnapshot!.documents {
+                        self.favIcon.image = UIImage(named: "icon-blackstar")
+                        self.inFavorite = true
+                    }
+                }
+            }
+    }
     
     @IBAction func favoriteButton(_ sender: UIBarButtonItem) {
         
+        database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: descriptinTitleLabel.text!).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    if self.inFavorite != true {
+                        
+                    self.database.db.collection(K.FStore.collectionName).document(document.documentID).setData(["\(self.authService.currentUID ?? "???")": ""], merge: true) { err in
+                        if let err = err {
+                            print("error \(err)")
+                        } else {
+                            print("mis en favoris")
+                            self.favIcon.image = UIImage(named: "icon-blackstar")
+                            self.inFavorite = true
+                        }
+                    }
+                    } else {
+                        self.database.db.collection(K.FStore.collectionName).document(document.documentID).updateData(["\(self.authService.currentUID ?? "???")": FieldValue.delete()]) { err in
+                            if let err = err {
+                                print("error \(err)")
+                            } else {
+                                print("Favoris removed!")
+                                self.favIcon.image = UIImage(named: "icon-star")
+                                self.inFavorite = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     
