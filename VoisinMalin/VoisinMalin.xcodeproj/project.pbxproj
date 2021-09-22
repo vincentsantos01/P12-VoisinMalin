@@ -13,7 +13,6 @@
 		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
 		BF73495626A811F4005671FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495526A811F4005671FA /* UIImage.swift */; };
 		BF73495826A878DE005671FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495726A878DE005671FA /* DetailViewController.swift */; };
-		BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495926A8817C005671FA /* AdsRepresentable.swift */; };
 		BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495D26A9CF60005671FA /* TableViewCell.swift */; };
 		BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF73495F26AAF70F005671FA /* GoogleService-Info.plist */; };
 		BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* AuthentificationViewController.swift */; };
@@ -25,7 +24,6 @@
 		BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2626ADA10B000552FD /* AdCreateViewController.swift */; };
 		BFA0C45626FB470E00C5D482 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */; };
 		BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */; };
-		BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27726B3EBAD00BF0ABF /* User.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
@@ -64,7 +62,6 @@
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
 		BF73495526A811F4005671FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		BF73495726A878DE005671FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BF73495926A8817C005671FA /* AdsRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsRepresentable.swift; sourceTree = "<group>"; };
 		BF73495D26A9CF60005671FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BF73495F26AAF70F005671FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF824D1826AB2053000552FD /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		BF824D2626ADA10B000552FD /* AdCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCreateViewController.swift; sourceTree = "<group>"; };
 		BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		BFA8B27726B3EBAD00BF0ABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,11 +205,9 @@
 				BFA8B27426B211C800BF0ABF /* Modules */,
 				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
 				BF73495526A811F4005671FA /* UIImage.swift */,
-				BF73495926A8817C005671FA /* AdsRepresentable.swift */,
 				BF824D1E26AD4E44000552FD /* PresentAlert.swift */,
 				BF824D2026AD5681000552FD /* Password.swift */,
 				BF824D2226AD6387000552FD /* Constants.swift */,
-				BFA8B27726B3EBAD00BF0ABF /* User.swift */,
 				BFF42B7B26DE1D530098AA01 /* StringExtension.swift */,
 			);
 			path = Model;
@@ -423,7 +417,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF73495A26A8817C005671FA /* AdsRepresentable.swift in Sources */,
 				BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
 				BF824D2126AD5681000552FD /* Password.swift in Sources */,
@@ -444,7 +437,6 @@
 				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
 				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,
 				BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */,
-				BFA8B27826B3EBAD00BF0ABF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,6 @@
 
 import UIKit
 import MessageUI
-import grpc
 import FirebaseFirestore
 
 class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
@@ -121,15 +120,15 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
                 for document in querySnapshot!.documents {
                     if self.inFavorite != true {
                         
-                    self.database.db.collection(K.FStore.collectionName).document(document.documentID).setData(["\(self.authService.currentUID ?? "???")": ""], merge: true) { err in
-                        if let err = err {
-                            print("error \(err)")
-                        } else {
-                            print("mis en favoris")
-                            self.favIcon.image = UIImage(named: "icon-blackstar")
-                            self.inFavorite = true
+                        self.database.db.collection(K.FStore.collectionName).document(document.documentID).setData(["\(self.authService.currentUID ?? "???")": ""], merge: true) { err in
+                            if let err = err {
+                                print("error \(err)")
+                            } else {
+                                print("mis en favoris")
+                                self.favIcon.image = UIImage(named: "icon-blackstar")
+                                self.inFavorite = true
+                            }
                         }
-                    }
                     } else {
                         self.database.db.collection(K.FStore.collectionName).document(document.documentID).updateData(["\(self.authService.currentUID ?? "???")": FieldValue.delete()]) { err in
                             if let err = err {
@@ -151,7 +150,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         let url:NSURL = URL(string: "TEL://\(demoAd?.phone ?? "??")")! as NSURL
         UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
-    
     
     
     @IBAction func mailButton(_ sender: UIButton) {

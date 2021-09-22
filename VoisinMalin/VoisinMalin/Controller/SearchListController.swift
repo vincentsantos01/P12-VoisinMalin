@@ -28,19 +28,16 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         styles()
-        
-        //sortBasedOnSegmentPressed()
-        
         locationManager = CLLocationManager()
         locationManager?.startUpdatingLocation()
         locationManager?.requestAlwaysAuthorization()
         locationManager?.startUpdatingLocation()
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        
         adsTableView.reloadData()
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         privateAds = []
@@ -72,14 +69,14 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
             else if let placemarks = placemarks {
                 for placemark in placemarks {
                     let address = [placemark.name,
-                    placemark.postalCode,
-                        placemark.locality].compactMap({$0}).joined(separator: ",  ")
+                                   placemark.postalCode,
+                                   placemark.locality].compactMap({$0}).joined(separator: ",  ")
                     print(address)
                 }
             }
         }
     }
-
+    
     func loadData() {
         
         database.db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
@@ -111,8 +108,6 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    
-    
     func styles() {
         adsTableView.layer.cornerRadius = 40
         adsTableView.clipsToBounds = true
@@ -134,10 +129,6 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
             break
         }
     }
- 
-    
-
-    
 }
 
 extension SearchListController: UITableViewDataSource, UITableViewDelegate {
@@ -159,8 +150,8 @@ extension SearchListController: UITableViewDataSource, UITableViewDelegate {
         cell.imageAd.load(url: url)
         cell.distanceLabel.text = "\(String(format: "%.0f",currentAd.sortDistance)) Kms"
         return cell
-        }
-        
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let adsDetail = privateAds[indexPath.row]

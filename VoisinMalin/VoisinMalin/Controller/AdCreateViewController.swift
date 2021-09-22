@@ -4,10 +4,8 @@
 //
 //  Created by vincent on 25/07/2021.
 //
-//import Foundation
 import UIKit
 import CoreLocation
-//import FirebaseStorage
 
 class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -33,6 +31,8 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         UserDefaults.standard.set(authService.userMail, forKey: "userMail")
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -76,6 +76,16 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y = -70 // Move view 150 points upward
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0 // Move view to original position
+    }
+    
+    
     @IBAction func uploadPressButton(_ sender: Any) {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -111,11 +121,11 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func adressHidden(_ sender: UISwitch) {
-       /* if sender.isOn {
-        locationLabel.text = ""
-        } else {
-            locationLabel.text = adsAddress
-        }*/
+        /* if sender.isOn {
+         locationLabel.text = ""
+         } else {
+         locationLabel.text = adsAddress
+         }*/
         locationLabel.text = sender.isOn ? "" : adsAddress
     }
     

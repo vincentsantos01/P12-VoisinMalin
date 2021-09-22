@@ -10,13 +10,12 @@ import FirebaseFirestore
 
 
 class FavoriteListController: UIViewController {
-
+    
     
     @IBOutlet weak var favoriteTableView: UITableView!
     
     var privateAds = [DefaultAds]()
     var database = DatabaseManager()
-    var fff: DefaultAds?
     var favoriteTableViewData: DefaultAds?
     private let authService: AuthService = AuthService()
     
@@ -36,7 +35,7 @@ class FavoriteListController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let recipeVC = segue.destination as? DetailViewController else { return }
-        recipeVC.demoAd = fff
+        recipeVC.demoAd = favoriteTableViewData
     }
     
     func loadData() {
@@ -72,8 +71,8 @@ class FavoriteListController: UIViewController {
         favoriteTableView.clipsToBounds = true
     }
     
-
-
+    
+    
 }
 extension FavoriteListController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +86,7 @@ extension FavoriteListController: UITableViewDataSource, UITableViewDelegate {
         
         
         let favoriteAd = privateAds[indexPath.row]
- 
+        
         database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: favoriteAd.title).whereField("\(authService.currentUID ?? "oups")", isEqualTo: "")
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -102,7 +101,7 @@ extension FavoriteListController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         return cell
-        }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
@@ -128,9 +127,9 @@ extension FavoriteListController: UITableViewDataSource, UITableViewDelegate {
             }
             
         }
-        //favoriteTableView.reloadData()
+        favoriteTableView.reloadData()
     }
-        
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let adsDetail = privateAds[indexPath.row]

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPasswordTextfield: UITextField!
     @IBOutlet weak var LoginViewButton: UIButton!
     @IBOutlet weak var noAccountButton: UIButton!
-
+    
     private let authService: AuthService = AuthService()
     
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         styles()
         setupTextFieldManager()
-
+        
     }
     func styles() {
         LoginViewButton.layer.cornerRadius = 30
@@ -51,11 +51,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func unwindToSignInViewController(_ segue: UIStoryboardSegue) { dismiss(animated: false) }
-    }
-    
-    
-    
-    
+}
+
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

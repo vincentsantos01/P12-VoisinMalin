@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreLocation
 
 class HomeViewController: UIViewController {
     
@@ -43,7 +42,7 @@ class HomeViewController: UIViewController {
         guard let recipeVC = segue.destination as? DetailViewController else { return }
         recipeVC.demoAd = fff
     }
-
+    
     private func uploadData() {
         privateAds = []
         database.db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
