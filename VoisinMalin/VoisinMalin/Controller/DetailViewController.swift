@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import MessageUI
+//import MessageUI
 import FirebaseFirestore
 
-class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class DetailViewController: UIViewController {
     
     
     
@@ -75,28 +75,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         }
     }
     
-    
-    
-    func configureMailController() -> MFMailComposeViewController {
-        let mailComposeVC = MFMailComposeViewController()
-        mailComposeVC.mailComposeDelegate = self
-        mailComposeVC.setToRecipients(["\(demoAd?.mail ?? "??")"])
-        mailComposeVC.setSubject("Annonce: \(demoAd?.title ?? "??")")
-        mailComposeVC.setMessageBody("", isHTML: false)
-        return mailComposeVC
-    }
-    
-    func showMailError() {
-        let sendMailAlert = UIAlertController(title: "Mail impossible", message: "Impossible d'envoyer un mail", preferredStyle: .alert)
-        let dismiss = UIAlertAction(title: "ok", style: .default, handler: nil)
-        sendMailAlert.addAction(dismiss)
-        self.present(sendMailAlert, animated: true, completion: nil)
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
     func checkFavorites() {
         database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: descriptinTitleLabel.text!).whereField("\(authService.currentUID ?? "oups")", isEqualTo: "")
             .getDocuments() { (querySnapshot, err) in
@@ -153,11 +131,13 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     
     @IBAction func mailButton(_ sender: UIButton) {
-        let mailComposeViewController = configureMailController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            showMailError()
+        let email = "\(demoAd?.mail ?? "error")"
+        if let url = URL(string: "mailto:\(email)") {
+          if #available(iOS 13.0, *) {
+            UIApplication.shared.open(url)
+          } else {
+            UIApplication.shared.openURL(url)
+          }
         }
     }
     

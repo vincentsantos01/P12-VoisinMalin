@@ -13,6 +13,7 @@ class FavoriteListController: UIViewController {
     
     
     @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var annonceSaveLabel: UILabel!
     
     var privateAds = [DefaultAds]()
     var database = DatabaseManager()
@@ -69,6 +70,8 @@ class FavoriteListController: UIViewController {
     func styles() {
         favoriteTableView.layer.cornerRadius = 40
         favoriteTableView.clipsToBounds = true
+        annonceSaveLabel.layer.cornerRadius = 20
+        annonceSaveLabel.clipsToBounds = true
     }
     
     

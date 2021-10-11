@@ -38,18 +38,49 @@ class AuthentificationViewController: UIViewController {
     
     @IBAction func signupPressButton(_ sender: UIButton) {
         
-        
-        guard let userName = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        guard let email = mailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        authService.signUp(userName: userName, email: email, password: password) { isSuccess in
-            if isSuccess {
-                self.performSegue(withIdentifier: "UnwindToSignInViewController", sender: nil)
-            } else {
-                self.presentAlert(titre: "Erreur", message: "Compte non creer")
-            }
+        let isValidEmail = TestValues.validEmailAdress(emailAdressString: mailTextField.text!.trimmingCharacters(in: .whitespaces))
+        let isValidPassword = TestValues.isValidPassword(password: passwordTextField.text?.trimmingCharacters(in: .whitespaces))
+        //guard let userName = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        //guard let email = mailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        //guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        //authService.signUp(userName: userName, email: email, password: password) { isSuccess in
+            //if isSuccess {
+               // self.performSegue(withIdentifier: "UnwindToSignInViewController", sender: nil)
+           // } else {
+               // self.presentAlert(titre: "Erreur", message: "Compte non creer")
+           // }
             
+        //}
+        print(isValidEmail)
+        print(isValidPassword)
+        
+        if isValidEmail == true && isValidPassword == true {
+          print("ok") // signUp()
+        } else {
+            presentAlert(titre: "error", message: "oups")
         }
+    }
+    
+    
+    private func signUp() {
+        if let email = mailTextField.text, let password = passwordTextField.text, let userName = usernameTextField.text {
+            authService.signUp(userName: userName, email: email, password: password) { success in
+                if success {
+                    self.performSegue(withIdentifier: "UnwindToSignInViewController", sender: nil)
+                } else {
+                    self.presentAlert(titre: "Erreur", message: "Compte non creer")
+                }
+            }
+        }
+    }
+    
+    private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
+        for item in textField {
+            guard !item.text!.isEmpty else {
+                return false
+            }
+        }
+        return true
     }
 }
 extension AuthentificationViewController: UITextFieldDelegate {

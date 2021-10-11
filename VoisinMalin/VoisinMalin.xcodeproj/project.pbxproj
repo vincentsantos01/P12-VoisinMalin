@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		297E9E17AAE635C8D9A5497A /* Pods_VoisinMalinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C44AC530FEAF0628C503B0 /* Pods_VoisinMalinTests.framework */; };
 		B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */; };
 		BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E033F26BC071C00E50B94 /* TabBarController.swift */; };
 		BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034326BC25E500E50B94 /* Authentification.storyboard */; };
@@ -15,15 +16,15 @@
 		BF73495826A878DE005671FA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495726A878DE005671FA /* DetailViewController.swift */; };
 		BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73495D26A9CF60005671FA /* TableViewCell.swift */; };
 		BF73496026AAF70F005671FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF73495F26AAF70F005671FA /* GoogleService-Info.plist */; };
+		BF7A4C1E270C8E7B00717708 /* TestValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A4C1D270C8E7B00717708 /* TestValues.swift */; };
 		BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1826AB2053000552FD /* AuthentificationViewController.swift */; };
 		BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1A26AB30BC000552FD /* HomeViewController.swift */; };
 		BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1C26AB4407000552FD /* LoginViewController.swift */; };
 		BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D1E26AD4E44000552FD /* PresentAlert.swift */; };
-		BF824D2126AD5681000552FD /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2026AD5681000552FD /* Password.swift */; };
 		BF824D2326AD6387000552FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2226AD6387000552FD /* Constants.swift */; };
 		BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF824D2626ADA10B000552FD /* AdCreateViewController.swift */; };
 		BFA0C45626FB470E00C5D482 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */; };
-		BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */; };
+		BFA8B27626B211F300BF0ABF /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA8B27526B211F300BF0ABF /* FirebaseAuthManager.swift */; };
 		BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878C26906E2300C1272C /* AppDelegate.swift */; };
 		BFB4878F26906E2300C1272C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4878E26906E2300C1272C /* SceneDelegate.swift */; };
 		BFB4879126906E2300C1272C /* SearchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB4879026906E2300C1272C /* SearchListController.swift */; };
@@ -33,6 +34,9 @@
 		BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487A626906E2500C1272C /* VoisinMalinTests.swift */; };
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
+		BFCA2C9D270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */; };
+		BFCA2C9F270B2345008BF2F1 /* FirebaseAuthServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */; };
+		BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */; };
 		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
 		BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B7B26DE1D530098AA01 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
@@ -55,8 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		213D9805639030C1DB1B6D15 /* Pods-VoisinMalinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalinTests.release.xcconfig"; path = "Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests.release.xcconfig"; sourceTree = "<group>"; };
 		27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.release.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.release.xcconfig"; sourceTree = "<group>"; };
 		4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.debug.xcconfig"; sourceTree = "<group>"; };
+		680EF3314B3B07AF69324769 /* Pods-VoisinMalinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalinTests.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91C44AC530FEAF0628C503B0 /* Pods_VoisinMalinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6E033F26BC071C00E50B94 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BF6E034326BC25E500E50B94 /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
@@ -64,15 +71,15 @@
 		BF73495726A878DE005671FA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF73495D26A9CF60005671FA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BF73495F26AAF70F005671FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF7A4C1D270C8E7B00717708 /* TestValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestValues.swift; sourceTree = "<group>"; };
 		BF824D1826AB2053000552FD /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		BF824D1A26AB30BC000552FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF824D1C26AB4407000552FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF824D1E26AD4E44000552FD /* PresentAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAlert.swift; sourceTree = "<group>"; };
-		BF824D2026AD5681000552FD /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		BF824D2226AD6387000552FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BF824D2626ADA10B000552FD /* AdCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCreateViewController.swift; sourceTree = "<group>"; };
 		BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
-		BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		BFA8B27526B211F300BF0ABF /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		BFB4878926906E2300C1272C /* VoisinMalin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoisinMalin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB4878C26906E2300C1272C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB4878E26906E2300C1272C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +95,9 @@
 		BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoisinMalinUITests.swift; sourceTree = "<group>"; };
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
+		BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
+		BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthServiceManager.swift; sourceTree = "<group>"; };
+		BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseManager.swift; sourceTree = "<group>"; };
 		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
 		BFF42B7B26DE1D530098AA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				297E9E17AAE635C8D9A5497A /* Pods_VoisinMalinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */,
+				91C44AC530FEAF0628C503B0 /* Pods_VoisinMalinTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,16 +144,21 @@
 			children = (
 				4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */,
 				27503B3FCDE5A9159500D33A /* Pods-VoisinMalin.release.xcconfig */,
+				680EF3314B3B07AF69324769 /* Pods-VoisinMalinTests.debug.xcconfig */,
+				213D9805639030C1DB1B6D15 /* Pods-VoisinMalinTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BFA8B27426B211C800BF0ABF /* Modules */ = {
+		BFA8B27426B211C800BF0ABF /* ModuleFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				BFA8B27526B211F300BF0ABF /* FirebaseManager.swift */,
+				BFA8B27526B211F300BF0ABF /* FirebaseAuthManager.swift */,
+				BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */,
+				BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */,
+				BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */,
 			);
-			path = Modules;
+			path = ModuleFirebase;
 			sourceTree = "<group>";
 		};
 		BFB4878026906E2300C1272C = {
@@ -202,13 +219,13 @@
 		BFB487BF26906EED00C1272C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BFA8B27426B211C800BF0ABF /* Modules */,
+				BFA8B27426B211C800BF0ABF /* ModuleFirebase */,
 				BF73494F26A71E7D005671FA /* DefaultAd.swift */,
 				BF73495526A811F4005671FA /* UIImage.swift */,
 				BF824D1E26AD4E44000552FD /* PresentAlert.swift */,
-				BF824D2026AD5681000552FD /* Password.swift */,
 				BF824D2226AD6387000552FD /* Constants.swift */,
 				BFF42B7B26DE1D530098AA01 /* StringExtension.swift */,
+				BF7A4C1D270C8E7B00717708 /* TestValues.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -217,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				BFB4879A26906E2500C1272C /* LaunchScreen.storyboard */,
+				BF6E034326BC25E500E50B94 /* Authentification.storyboard */,
 				BFB4879226906E2300C1272C /* Main.storyboard */,
 				BF73495D26A9CF60005671FA /* TableViewCell.swift */,
-				BF6E034326BC25E500E50B94 /* Authentification.storyboard */,
 				BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */,
 				BFA0C45526FB470E00C5D482 /* FavoriteTableViewCell.swift */,
 			);
@@ -267,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFB487B926906E2500C1272C /* Build configuration list for PBXNativeTarget "VoisinMalinTests" */;
 			buildPhases = (
+				266947121AC0B7BB3DBD1952 /* [CP] Check Pods Manifest.lock */,
 				BFB4879E26906E2500C1272C /* Sources */,
 				BFB4879F26906E2500C1272C /* Frameworks */,
 				BFB487A026906E2500C1272C /* Resources */,
+				67A3ADAFD8EB26501D7D28CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,6 +390,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		266947121AC0B7BB3DBD1952 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoisinMalinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		352EA8F5065AD5715CCF6458 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +427,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67A3ADAFD8EB26501D7D28CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D38F4B43461DB2DBE8AB5C04 /* [CP] Check Pods Manifest.lock */ = {
@@ -419,9 +477,11 @@
 			files = (
 				BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
-				BF824D2126AD5681000552FD /* Password.swift in Sources */,
+				BFCA2C9D270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift in Sources */,
+				BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
+				BFCA2C9F270B2345008BF2F1 /* FirebaseAuthServiceManager.swift in Sources */,
 				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
 				BF824D2326AD6387000552FD /* Constants.swift in Sources */,
 				BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */,
@@ -430,10 +490,11 @@
 				BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */,
 				BF73495826A878DE005671FA /* DetailViewController.swift in Sources */,
 				BFA0C45626FB470E00C5D482 /* FavoriteTableViewCell.swift in Sources */,
-				BFA8B27626B211F300BF0ABF /* FirebaseManager.swift in Sources */,
+				BFA8B27626B211F300BF0ABF /* FirebaseAuthManager.swift in Sources */,
 				BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */,
 				BF824D1F26AD4E44000552FD /* PresentAlert.swift in Sources */,
 				BF824D2726ADA10B000552FD /* AdCreateViewController.swift in Sources */,
+				BF7A4C1E270C8E7B00717708 /* TestValues.swift in Sources */,
 				BF824D1D26AB4407000552FD /* LoginViewController.swift in Sources */,
 				BF824D1B26AB30BC000552FD /* HomeViewController.swift in Sources */,
 				BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */,
@@ -651,11 +712,17 @@
 		};
 		BFB487BA26906E2500C1272C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 680EF3314B3B07AF69324769 /* Pods-VoisinMalinTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
+				HEADER_SEARCH_PATHS = (
+					HEADER_SEARCH_PATHS,
+					"=",
+					"\"${PODS_ROOT}/Firebase/CoreOnly/Sources\"",
+				);
 				INFOPLIST_FILE = VoisinMalinTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -673,11 +740,17 @@
 		};
 		BFB487BB26906E2500C1272C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 213D9805639030C1DB1B6D15 /* Pods-VoisinMalinTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A68G59K3N4;
+				HEADER_SEARCH_PATHS = (
+					HEADER_SEARCH_PATHS,
+					"=",
+					"\"${PODS_ROOT}/Firebase/CoreOnly/Sources\"",
+				);
 				INFOPLIST_FILE = VoisinMalinTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

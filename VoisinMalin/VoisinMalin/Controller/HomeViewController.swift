@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var persoTableView: UITableView!
     @IBOutlet weak var postedAdsLabel: UILabel!
     @IBOutlet weak var noAdsLabel: UILabel!
+    @IBOutlet weak var anooncePoste: UILabel!
     
     
     
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.set(authService.userMail, forKey: "userMail")
         adPost.layer.cornerRadius = 20
         adPost.layer.borderWidth = 3
+        anooncePoste.layer.cornerRadius = 20
+        anooncePoste.layer.borderWidth = 1
         adPost.layer.borderColor = UIColor.black.cgColor
         persoTableView.layer.cornerRadius = 10
         bindUI()
