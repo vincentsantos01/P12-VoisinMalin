@@ -40,24 +40,21 @@ class AuthentificationViewController: UIViewController {
         
         let isValidEmail = TestValues.validEmailAdress(emailAdressString: mailTextField.text!.trimmingCharacters(in: .whitespaces))
         let isValidPassword = TestValues.isValidPassword(password: passwordTextField.text?.trimmingCharacters(in: .whitespaces))
-        //guard let userName = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        //guard let email = mailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        //guard let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        //authService.signUp(userName: userName, email: email, password: password) { isSuccess in
-            //if isSuccess {
-               // self.performSegue(withIdentifier: "UnwindToSignInViewController", sender: nil)
-           // } else {
-               // self.presentAlert(titre: "Erreur", message: "Compte non creer")
-           // }
-            
-        //}
+
         print(isValidEmail)
         print(isValidPassword)
         
+        if isValidEmail == false && isValidPassword == false {
+            presentAlert(titre: "error", message: "Mail et mot de passe incorecte")
+        }
+        if isValidEmail == false {
+            presentAlert(titre: "error", message: "Mail incorecte")
+        }
+        if isValidPassword == false {
+            presentAlert(titre: "error", message: "Mot de passe incorecte")
+        }
         if isValidEmail == true && isValidPassword == true {
-          print("ok") // signUp()
-        } else {
-            presentAlert(titre: "error", message: "oups")
+            signUp()
         }
     }
     

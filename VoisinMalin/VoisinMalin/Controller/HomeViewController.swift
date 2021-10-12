@@ -34,11 +34,12 @@ class HomeViewController: UIViewController {
         anooncePoste.layer.borderWidth = 1
         adPost.layer.borderColor = UIColor.black.cgColor
         persoTableView.layer.cornerRadius = 10
-        bindUI()
+        
         persoTableView.dataSource = self
         persoTableView.delegate = self
         uploadData()
-        
+        bindUI()
+        print("$$$$$$$$$$$$$$$$$ \(UserDefaults.standard.string(forKey: "userMail") ?? "oups") $$$$$$$$$$$$$$$$$")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,6 +61,7 @@ class HomeViewController: UIViewController {
                             let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: (sortdistance as! NSString).doubleValue, isFavotites: isFav as! Bool)
                             self.privateAds.append(newad)
                             self.persoTableView.reloadData()
+                            
                         }
                     }
                 }

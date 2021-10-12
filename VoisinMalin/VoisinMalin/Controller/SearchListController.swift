@@ -21,7 +21,6 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     var currentLocation: CLLocation?
     var demo: DefaultAds?
     var privateAds = [DefaultAds]()
-    //var aaa: Double?
     var database = DatabaseManager()
     
     

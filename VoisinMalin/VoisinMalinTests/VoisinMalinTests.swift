@@ -6,17 +6,52 @@
 //
 
 import XCTest
-import Firebase
+//import Firebase
 
 @testable import VoisinMalin
 
 class VoisinMalinTests: XCTestCase {
 
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGivenEmptyValue_WhenAddedValidEmail_ThenReturnTrue() {
+        let validEmail =  "test.test@test.fr"
+
+        let value = TestValues.validEmailAdress(emailAdressString: validEmail)
+
+        XCTAssertTrue(value)
     }
 
+    func testGivenEmptyValue_WhenAddedInvalidEmail_ThenReturnFalse() {
+        let invalidEmail =  "test.test.test.fr"
 
+        let value = TestValues.validEmailAdress(emailAdressString: invalidEmail)
+
+        XCTAssertFalse(value)
+    }
+    
+    ///  Corect Pasword : 8 caracters, 1 lower, 1 uper, 1 number
+    func testGivenEmptyValue_WhenAddedValidPassword_ThenReturnTrue() {
+        let validPassword = "enfinlafindeceP12"
+
+        let value = TestValues.isValidPassword(password: validPassword)
+
+        XCTAssertTrue(value)
+    }
+    
+    ///  Corect Pasword : 8 caracters, 1 lower, 1 uper,1 number
+    func testGivenEmptyValue_WhenAddedInvalidPassword_ThenReturnTrue() {
+        let invalidPassword = "enfinlafindecep12"
+
+        let value = TestValues.isValidPassword(password: invalidPassword)
+
+        XCTAssertFalse(value)
+    }
+
+    func testGivenUid() {
+        let validUID = "Jean"
+        
+        let value = database.getUserData(with: validUID, callback: callback)
+        
+        XCTAssertTrue(value)
+    }
 }

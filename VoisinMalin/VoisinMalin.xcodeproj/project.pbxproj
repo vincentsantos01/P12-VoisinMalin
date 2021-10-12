@@ -35,7 +35,6 @@
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 		BFCA2C9D270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */; };
-		BFCA2C9F270B2345008BF2F1 /* FirebaseAuthServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */; };
 		BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */; };
 		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
 		BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B7B26DE1D530098AA01 /* StringExtension.swift */; };
@@ -96,7 +95,6 @@
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 		BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
-		BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthServiceManager.swift; sourceTree = "<group>"; };
 		BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseManager.swift; sourceTree = "<group>"; };
 		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
 		BFF42B7B26DE1D530098AA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				BFA8B27526B211F300BF0ABF /* FirebaseAuthManager.swift */,
 				BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */,
-				BFCA2C9E270B2345008BF2F1 /* FirebaseAuthServiceManager.swift */,
 				BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */,
 			);
 			path = ModuleFirebase;
@@ -481,7 +478,6 @@
 				BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
-				BFCA2C9F270B2345008BF2F1 /* FirebaseAuthServiceManager.swift in Sources */,
 				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
 				BF824D2326AD6387000552FD /* Constants.swift in Sources */,
 				BF73495E26A9CF60005671FA /* TableViewCell.swift in Sources */,
