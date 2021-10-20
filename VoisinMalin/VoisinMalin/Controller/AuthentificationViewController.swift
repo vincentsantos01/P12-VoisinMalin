@@ -40,9 +40,6 @@ class AuthentificationViewController: UIViewController {
         
         let isValidEmail = TestValues.validEmailAdress(emailAdressString: mailTextField.text!.trimmingCharacters(in: .whitespaces))
         let isValidPassword = TestValues.isValidPassword(password: passwordTextField.text?.trimmingCharacters(in: .whitespaces))
-
-        print(isValidEmail)
-        print(isValidPassword)
         
         if isValidEmail == false && isValidPassword == false {
             presentAlert(titre: "error", message: "Mail et mot de passe incorecte")

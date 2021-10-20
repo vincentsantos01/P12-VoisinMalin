@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import MessageUI
 import FirebaseFirestore
 
 class DetailViewController: UIViewController {

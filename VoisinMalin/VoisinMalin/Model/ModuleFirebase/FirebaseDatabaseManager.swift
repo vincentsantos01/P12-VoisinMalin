@@ -9,9 +9,7 @@ import Foundation
 import Firebase
 import FirebaseStorage
 
-
-final class DatabaseManager {
-    
+final class DatabaseManager {    
     
     private let database: DatabaseType
     private let databaseRef = Database.database(url: "https://p12voisinmalin-default-rtdb.europe-west1.firebasedatabase.app").reference().child("ads")
@@ -21,20 +19,24 @@ final class DatabaseManager {
     init(database: DatabaseType = FirestoreDatabase()) {
         self.database = database
     }
-    
-    func deleteDoc(document: String) {
-        let ref = db.collection("ads").document()
-        let idCurrentAd = ref.documentID
-        db.collection("ads").document(idCurrentAd).delete() { err in
-            if let err = err {
-                print("error \(err)")
-            } else {
-                print("ok")
-            }
-        }
-    }
-    
+
     func getUserData(with uid: String, callback: @escaping (Result<[String: Any], Error>) -> Void) {
         database.getUserData(with: uid, callback: callback)
+    }
+}
+protocol DatabaseType {
+    func getUserData(with uid: String, callback: @escaping (Result<[String: Any], Error>) -> Void)
+}
+
+final class FirestoreDatabase: DatabaseType {
+    
+    func getUserData(with uid: String, callback: @escaping (Result<[String: Any], Error>) -> Void) {
+        Firestore.firestore().collection("users").whereField("uid", isEqualTo: uid).getDocuments { querySnapshot, error in
+            guard let data = querySnapshot?.documents.first?.data() else {
+                return
+                
+            }
+            callback(.success(data))
+        }
     }
 }

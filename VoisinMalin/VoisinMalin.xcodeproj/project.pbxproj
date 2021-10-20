@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		297E9E17AAE635C8D9A5497A /* Pods_VoisinMalinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C44AC530FEAF0628C503B0 /* Pods_VoisinMalinTests.framework */; };
 		B347F35BC27C2E3E8E583816 /* Pods_VoisinMalin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */; };
+		BF684BAB2715EED40055E149 /* AuthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF684BAA2715EED40055E149 /* AuthManagerTests.swift */; };
+		BF684BAD2715F4480055E149 /* DatabaseManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF684BAC2715F4480055E149 /* DatabaseManagerTests.swift */; };
 		BF6E034026BC071C00E50B94 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6E033F26BC071C00E50B94 /* TabBarController.swift */; };
 		BF6E034426BC25E500E50B94 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6E034326BC25E500E50B94 /* Authentification.storyboard */; };
 		BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73494F26A71E7D005671FA /* DefaultAd.swift */; };
@@ -35,7 +37,6 @@
 		BFB487B226906E2500C1272C /* VoisinMalinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487B126906E2500C1272C /* VoisinMalinUITests.swift */; };
 		BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB487C426907C6D00C1272C /* FavoritListController.swift */; };
 		BFCA2C9D270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */; };
-		BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */; };
 		BFF42B2926CE5AB10098AA01 /* PersonnalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */; };
 		BFF42B7C26DE1D530098AA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF42B7B26DE1D530098AA01 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		4965A20DFD86D35D5EB25A71 /* Pods-VoisinMalin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalin.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalin/Pods-VoisinMalin.debug.xcconfig"; sourceTree = "<group>"; };
 		680EF3314B3B07AF69324769 /* Pods-VoisinMalinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoisinMalinTests.debug.xcconfig"; path = "Target Support Files/Pods-VoisinMalinTests/Pods-VoisinMalinTests.debug.xcconfig"; sourceTree = "<group>"; };
 		91C44AC530FEAF0628C503B0 /* Pods_VoisinMalinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF684BAA2715EED40055E149 /* AuthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManagerTests.swift; sourceTree = "<group>"; };
+		BF684BAC2715F4480055E149 /* DatabaseManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManagerTests.swift; sourceTree = "<group>"; };
 		BF6E033F26BC071C00E50B94 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BF6E034326BC25E500E50B94 /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
 		BF73494F26A71E7D005671FA /* DefaultAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAd.swift; sourceTree = "<group>"; };
@@ -95,7 +98,6 @@
 		BFB487B326906E2500C1272C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB487C426907C6D00C1272C /* FavoritListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritListController.swift; sourceTree = "<group>"; };
 		BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
-		BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseManager.swift; sourceTree = "<group>"; };
 		BFF42B2826CE5AB10098AA01 /* PersonnalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnalTableViewCell.swift; sourceTree = "<group>"; };
 		BFF42B7B26DE1D530098AA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F9A2398E3D2197F17FA88FD8 /* Pods_VoisinMalin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoisinMalin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +155,6 @@
 			children = (
 				BFA8B27526B211F300BF0ABF /* FirebaseAuthManager.swift */,
 				BFCA2C9C270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift */,
-				BFCA2CA0270B2407008BF2F1 /* FirestoreDatabaseManager.swift */,
 			);
 			path = ModuleFirebase;
 			sourceTree = "<group>";
@@ -199,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				BFB487A626906E2500C1272C /* VoisinMalinTests.swift */,
+				BF684BAA2715EED40055E149 /* AuthManagerTests.swift */,
+				BF684BAC2715F4480055E149 /* DatabaseManagerTests.swift */,
 				BFB487A826906E2500C1272C /* Info.plist */,
 			);
 			path = VoisinMalinTests;
@@ -475,7 +478,6 @@
 				BF824D1926AB2053000552FD /* AuthentificationViewController.swift in Sources */,
 				BFB4879126906E2300C1272C /* SearchListController.swift in Sources */,
 				BFCA2C9D270B1D9E008BF2F1 /* FirebaseDatabaseManager.swift in Sources */,
-				BFCA2CA1270B2407008BF2F1 /* FirestoreDatabaseManager.swift in Sources */,
 				BFB487C526907C6D00C1272C /* FavoritListController.swift in Sources */,
 				BFB4878D26906E2300C1272C /* AppDelegate.swift in Sources */,
 				BF73495026A71E7D005671FA /* DefaultAd.swift in Sources */,
@@ -502,6 +504,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB487A726906E2500C1272C /* VoisinMalinTests.swift in Sources */,
+				BF684BAB2715EED40055E149 /* AuthManagerTests.swift in Sources */,
+				BF684BAD2715F4480055E149 /* DatabaseManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

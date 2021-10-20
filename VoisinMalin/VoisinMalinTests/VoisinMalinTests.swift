@@ -6,12 +6,9 @@
 //
 
 import XCTest
-//import Firebase
-
 @testable import VoisinMalin
 
 class VoisinMalinTests: XCTestCase {
-
 
     func testGivenEmptyValue_WhenAddedValidEmail_ThenReturnTrue() {
         let validEmail =  "test.test@test.fr"
@@ -45,13 +42,5 @@ class VoisinMalinTests: XCTestCase {
         let value = TestValues.isValidPassword(password: invalidPassword)
 
         XCTAssertFalse(value)
-    }
-
-    func testGivenUid() {
-        let validUID = "Jean"
-        
-        let value = database.getUserData(with: validUID, callback: callback)
-        
-        XCTAssertTrue(value)
     }
 }
