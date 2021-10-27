@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HO3-hY-yAy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HO3-hY-yAy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -717,11 +717,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkJ-Rx-2ma">
-                                <rect key="frame" x="36" y="625" width="120" height="50"/>
+                                <rect key="frame" x="36" y="614" width="54" height="40"/>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="4KG-C2-AML"/>
-                                    <constraint firstAttribute="height" constant="50" id="v2K-uK-tn9"/>
+                                    <constraint firstAttribute="height" constant="40" id="Iqt-nQ-xKa"/>
                                 </constraints>
                                 <state key="normal" title="Appeler">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -731,11 +730,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qa-gk-1A5">
-                                <rect key="frame" x="219" y="625" width="120" height="50"/>
+                                <rect key="frame" x="231" y="614" width="108" height="40"/>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bC7-Tv-qxc"/>
-                                    <constraint firstAttribute="width" constant="120" id="wRn-qC-Ei9"/>
+                                    <constraint firstAttribute="height" constant="40" id="dU8-HR-VGH"/>
                                 </constraints>
                                 <state key="normal" title="Envoyer un mail">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -750,23 +748,23 @@
                         <constraints>
                             <constraint firstItem="XtX-5c-olg" firstAttribute="top" secondItem="RtN-vi-V9T" secondAttribute="bottom" constant="20" id="3NR-XF-Mdo"/>
                             <constraint firstItem="8Kc-DN-EUV" firstAttribute="trailing" secondItem="RtN-vi-V9T" secondAttribute="trailing" id="6d3-Jk-Ih7"/>
-                            <constraint firstItem="4qa-gk-1A5" firstAttribute="top" secondItem="9Z9-O0-KjI" secondAttribute="bottom" constant="21" id="9BG-jQ-H1J"/>
                             <constraint firstItem="9Z9-O0-KjI" firstAttribute="leading" secondItem="8Kc-DN-EUV" secondAttribute="leading" constant="36" id="9JB-Tc-DTo"/>
+                            <constraint firstItem="8Kc-DN-EUV" firstAttribute="trailing" secondItem="4qa-gk-1A5" secondAttribute="trailing" constant="36" id="DL9-Ot-kQq"/>
                             <constraint firstItem="8Kc-DN-EUV" firstAttribute="trailing" secondItem="9Z9-O0-KjI" secondAttribute="trailing" constant="36" id="ENG-0d-c36"/>
                             <constraint firstItem="XtX-5c-olg" firstAttribute="top" secondItem="3KX-Cz-u6l" secondAttribute="topMargin" constant="250" id="HE9-8m-4cR"/>
                             <constraint firstItem="RtN-vi-V9T" firstAttribute="top" secondItem="8Kc-DN-EUV" secondAttribute="top" id="Ixf-oa-B0w"/>
                             <constraint firstItem="9Z9-O0-KjI" firstAttribute="top" secondItem="9vr-cu-6h8" secondAttribute="bottom" constant="25" id="Jkh-ug-6OT"/>
                             <constraint firstItem="XtX-5c-olg" firstAttribute="leading" secondItem="8Kc-DN-EUV" secondAttribute="leading" constant="36" id="LP5-KZ-MGN"/>
                             <constraint firstItem="RtN-vi-V9T" firstAttribute="leading" secondItem="8Kc-DN-EUV" secondAttribute="leading" id="NL2-EP-LAA"/>
+                            <constraint firstItem="jkJ-Rx-2ma" firstAttribute="leading" secondItem="8Kc-DN-EUV" secondAttribute="leading" constant="36" id="NcO-gr-wA7"/>
                             <constraint firstItem="9Z9-O0-KjI" firstAttribute="top" secondItem="XtX-5c-olg" secondAttribute="bottom" constant="25" id="OTK-z3-auX"/>
+                            <constraint firstItem="jkJ-Rx-2ma" firstAttribute="top" secondItem="9Z9-O0-KjI" secondAttribute="bottom" constant="10" id="Ox8-dO-gfS"/>
                             <constraint firstItem="9vr-cu-6h8" firstAttribute="leading" secondItem="3KX-Cz-u6l" secondAttribute="leadingMargin" constant="246" id="UTh-Uy-jZX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XtX-5c-olg" secondAttribute="trailing" constant="176" id="bBN-Oq-bVG"/>
                             <constraint firstItem="8Kc-DN-EUV" firstAttribute="trailing" secondItem="9vr-cu-6h8" secondAttribute="trailing" constant="36" id="f4p-Nk-vzE"/>
                             <constraint firstItem="9Z9-O0-KjI" firstAttribute="top" secondItem="3KX-Cz-u6l" secondAttribute="topMargin" constant="307" id="j4a-LX-kfq"/>
-                            <constraint firstItem="8Kc-DN-EUV" firstAttribute="trailing" secondItem="4qa-gk-1A5" secondAttribute="trailing" constant="36" id="mKB-CB-D5p"/>
-                            <constraint firstItem="jkJ-Rx-2ma" firstAttribute="leading" secondItem="8Kc-DN-EUV" secondAttribute="leading" constant="36" id="o1o-uy-QqE"/>
+                            <constraint firstItem="4qa-gk-1A5" firstAttribute="top" secondItem="9Z9-O0-KjI" secondAttribute="bottom" constant="10" id="qcJ-vD-Hqh"/>
                             <constraint firstItem="9vr-cu-6h8" firstAttribute="top" secondItem="3KX-Cz-u6l" secondAttribute="topMargin" constant="250" id="rVJ-ag-CQT"/>
-                            <constraint firstItem="jkJ-Rx-2ma" firstAttribute="top" secondItem="9Z9-O0-KjI" secondAttribute="bottom" constant="21" id="wM8-rZ-1WF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nEA-B5-QLu">

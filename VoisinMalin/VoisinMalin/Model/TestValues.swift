@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class TestValues {
-    
+/// Check if email is valid
    static func validEmailAdress(emailAdressString: String?) -> Bool {
         guard emailAdressString != nil else { return false }
         var returnValue = true
@@ -27,7 +27,7 @@ class TestValues {
         }
         return returnValue
     }
-    
+/// Check if pasword is valid
     static func isValidPassword(password: String?) -> Bool {
         // at least one uppercase
         // at least one digit

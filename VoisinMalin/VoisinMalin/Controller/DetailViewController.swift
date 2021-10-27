@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
         
     }
     
-    
+ /// Modify styles UI
     func styles() {
         descriptionLabel.layer.cornerRadius = 20
         descriptionLabel.clipsToBounds = true
@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
         mailButton.clipsToBounds = true
     }
     
-    
+ /// Show or not a delete button
     func updateAds() {
         guard let ads = demoAd else { return }
         descriptinTitleLabel.text = ads.title
@@ -73,7 +73,7 @@ class DetailViewController: UIViewController {
             delButton.isHidden = true
         }
     }
-    
+/// Check if Ads is favorites
     func checkFavorites() {
         database.db.collection(K.FStore.collectionName).whereField("Title", isEqualTo: descriptinTitleLabel.text!).whereField("\(authService.currentUID ?? "oups")", isEqualTo: "")
             .getDocuments() { (querySnapshot, err) in

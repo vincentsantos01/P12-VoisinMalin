@@ -48,7 +48,7 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         guard let recipeVC = segue.destination as? DetailViewController else { return }
         recipeVC.demoAd = demo
     }
-    
+/// Load current user location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             let currentGPS = "Lat: \(location.coordinate.latitude) Long: \(location.coordinate.longitude)"
@@ -58,7 +58,7 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
-    
+/// Get address with currenent user location
     func getAddress(fromLocation location: CLLocation) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
@@ -77,14 +77,13 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
     }
     
     func loadData() {
-        
+/// Load Ads in firebase
         database.db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
             if let e = error {
                 print("on dirait \(e)")
             } else {
                 if let snapshotDocument = querySnapshot?.documents {
                     for doc in snapshotDocument {
-                        print(doc.data())
                         let data = doc.data()
                         if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let price = data[K.FStore.priceField] as? String, let gpslong = data[K.FStore.gpsLocationLong], let gpslat = data[K.FStore.gpsLocationLat], let sortD = data[K.FStore.sortDistance], let id = data[K.FStore.documentID], let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String, let isFav = data[K.FStore.isFavorites] as? Bool {
                             let lat = (data[K.FStore.gpsLocationLat] as! NSString).doubleValue
@@ -92,8 +91,6 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
                             let adDistance = CLLocation(latitude: lat, longitude: long)
                             let distance = (self.locationManager?.location?.distance(from: adDistance) ?? 0)/1000
                             let roundedDistance = distance.rounded()
-                            print(roundedDistance)
-                            
                             var newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: (sortD as! NSString).doubleValue, isFavotites: isFav )
                             newad.sortDistance = roundedDistance
                             self.privateAds.append(newad)
@@ -106,7 +103,7 @@ class SearchListController: UIViewController, CLLocationManagerDelegate {
         }
         
     }
-    
+/// Modify styles UI
     func styles() {
         adsTableView.layer.cornerRadius = 40
         adsTableView.clipsToBounds = true

@@ -108,11 +108,6 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func adressHidden(_ sender: UISwitch) {
-        /* if sender.isOn {
-         locationLabel.text = ""
-         } else {
-         locationLabel.text = adsAddress
-         }*/
         locationLabel.text = sender.isOn ? "" : adsAddress
     }
     

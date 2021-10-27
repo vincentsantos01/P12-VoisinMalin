@@ -9,11 +9,11 @@ import Foundation
 
 extension String {
     
-    /// Parametre qui permets de ne pas pouvoir mettre d'espaces dans le textfield
+/// Check no space in textfield
     var isBlank: Bool {
         return self.trimmingCharacters(in: .whitespaces) == String() ? true : false
     }
-    /// Parametre qui permets de ne pas pouvoir mettre de nombres dans le textfield
+/// Check no number in textfield
     var isNumeric: Bool {
         return self.trimmingCharacters(in: .letters) == String() ? true : false
     }

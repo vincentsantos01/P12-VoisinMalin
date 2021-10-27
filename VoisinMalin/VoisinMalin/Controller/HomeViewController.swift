@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
     
     private func uploadData() {
         privateAds = []
-        database.db.collection(K.FStore.collectionName).getDocuments { querySnapshot, error in
+        database.db.collection(K.FStore.collectionName).whereField("Mail", isEqualTo: "\(UserDefaults.standard.string(forKey: "userMail") ?? "??")").getDocuments { querySnapshot, error in
             if let e = error {
                 print("on dirait \(e)")
             } else {
@@ -64,9 +64,7 @@ class HomeViewController: UIViewController {
                         let data = doc.data()
                         if let title = data[K.FStore.titleField] as? String, let description = data[K.FStore.descriptionField] as? String, let id = data[K.FStore.documentID], let isFav = data[K.FStore.isFavorites], let gpslat = data[K.FStore.gpsLocationLat], let gpslong = data[K.FStore.gpsLocationLong], let price = data[K.FStore.priceField] as? String, let phone = data[K.FStore.phoneField] as? String, let mail = data[K.FStore.mailField] as? String, let location = data[K.FStore.locationField] as? String, let image = data[K.FStore.imageAds] as? String, let sortdistance = data[K.FStore.sortDistance] {
                             let newad = DefaultAds(title: title, price: price, location: location, image: image, description: description, phone: phone, mail: mail, documentID: id as! String, gpsLocationLat: gpslat as! String, gpsLocationLong: gpslong as! String, sortDistance: (sortdistance as! NSString).doubleValue, isFavotites: isFav as! Bool)
-                            if newad.mail == UserDefaults.standard.string(forKey: "userMail") {
-                                self.privateAds.append(newad)
-                            }
+                            self.privateAds.append(newad)
                             self.persoTableView.reloadData()
                             
                         }
@@ -128,15 +126,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         if persoAd.mail == UserDefaults.standard.string(forKey: "userMail") {
-            print("$$$$$$$$$  pas dans le else $$$$$$$$$$")
             cell.persoTitle.text = persoAd.title
             cell.persoPrice.text = persoAd.price + "€"
             let url = (URL(string: "\(persoAd.image)") ?? nil)!
             cell.persoImage.load(url: url)
             
         } else {
-            
-            print("$$$$$$$$$  dans le else $$$$$$$")
             persoTableView.isHidden = true
             noAdsLabel.isHidden = false
             
