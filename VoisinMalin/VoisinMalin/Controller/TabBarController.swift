@@ -11,7 +11,7 @@ import UIKit
 final class TabBarController: UITabBarController {
    
     private let authService: AuthService = AuthService()
-    
+/// Check if user is log
     override func viewDidLoad() {
         super.viewDidLoad()
         print("")

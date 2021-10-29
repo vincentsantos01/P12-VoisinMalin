@@ -40,7 +40,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     }
-    
+/// check long & lat user
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
             
@@ -53,7 +53,7 @@ class AdCreateViewController: UIViewController, CLLocationManagerDelegate {
             
         }
     }
-    
+/// translate long & lat user in adress 
     func getAddress(fromLocation location: CLLocation) {
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in

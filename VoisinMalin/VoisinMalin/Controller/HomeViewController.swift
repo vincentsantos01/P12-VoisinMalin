@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
         persoTableView.layer.cornerRadius = 10
     }
     
-    
+/// Load ads on firebase with filter
     private func uploadData() {
         privateAds = []
         database.db.collection(K.FStore.collectionName).whereField("Mail", isEqualTo: "\(UserDefaults.standard.string(forKey: "userMail") ?? "??")").getDocuments { querySnapshot, error in

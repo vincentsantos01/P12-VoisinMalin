@@ -67,7 +67,7 @@ class AuthentificationViewController: UIViewController {
             }
         }
     }
-    
+/// Check if textfield is not empty
     private func fieldIsNotEmpty(_ textField: [UITextField]) -> Bool {
         for item in textField {
             guard !item.text!.isEmpty else {
